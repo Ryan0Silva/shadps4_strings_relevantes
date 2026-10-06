@@ -1,0 +1,2 @@
+# shadps4_strings_relevantes
+shadps4_strings_relevantes
