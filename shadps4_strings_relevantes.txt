@@ -1,11 +1,8 @@
 ﻿         ->cannot do aligned memory accesses anymore
-    dma={} buffers={} images={} dropped={}
     float index = texture2D(tex0, uv).r * 255.0;
     gl_FragColor = texture2D(tex0, v_texCoord) * v_color;
     gl_FragColor = texture2D(tex0, v_texCoord);
     gl_FragColor = texture2D(u_texture, v_texCoord);
-    gpu words: {:#x} {:#x} {:#x} {:#x} {:#x}
-    image[{}] addr={:#x} fmt={:#x} written={}
     mediump float index = texture2D(u_texture, uv).r * 255.0;
     mediump vec4 color = texture2D(u_texture, v_texCoord);
     return texture2D(tex1, vec2((index + 0.5) / 256.0, 0.5));
@@ -29,6 +26,16 @@
   Merged image ID:       {}
   opt flags: multiline={}, password={}, ext_kbd={}, fixed_pos={}, over2k={}
   timeouts: connect={}us send={}us recv={}us resolve={}us resolve_retry={}
+ ???h???????|???????????AVIAMFParamDefinition
+ | ::_fl::kFixed32
+ | ::_fl::kFixed64
+ | ::_fl::kPackedFixed32
+ | ::_fl::kPackedFixed64
+ | ::_fl::kPackedSFixed32
+ | ::_fl::kPackedSFixed64
+ | ::_fl::kSFixed32
+ | ::_fl::kSFixed64
+ alcSuspendContext behavior is not portable -- some implementations suspend all rendering, some only defer property changes, and some are completely no-op; consider using alcDevicePauseSOFT to suspend all rendering, or alDeferUpdatesSOFT to only defer property changes
  AttachmentFeedbackLoopEXT |
  BlitDst |
  BlitSrc |
@@ -39,10 +46,7 @@
  DepthCopyOnComputeQueueKHR |
  DepthCopyOnTransferQueueKHR |
  DepthStencilAttachment |
- DeviceCoherentAMD |
- DeviceUncachedAMD |
  FragmentShadingRateAttachmentKHR |
- HostCached |
  HostImageTransfer |
  HostTransfer |
 - image2DViewOf3D: {}
@@ -51,6 +55,7 @@
  LinearColorAttachmentNV |
  memory={}
  MultisampledRenderToSingleSampledEXT |
+ NoRendererClear
  OpticalFlowImageNV |
 - primitiveTopologyPatchListRestart: {}
  SampledImage |
@@ -71,6 +76,7 @@
  StorageImageAtomic |
  TensorImageAliasingARM |
  TensorShaderARM |
+- This tool doesn't cache results and is slow, don't keep it open!
  TileMemoryQCOM |
  TransferDst |
  TransferSrc |
@@ -168,57 +174,58 @@
 !"Texture must be created with COMPUTE_STORAGE_WRITE or COMPUTE_STORAGE_SIMULTANEOUS_READ_WRITE flag"
 !"Unrecognized TextureFormat!"
 !"Vertex shader cannot be NULL!"
+!(_TexData != NULL && _TexID != ImTextureID_Invalid) at I:/EMULADORES/Playstation 4/shadPS4-src/externals/imgui\imgui.h:4129
 "texture2
 "vkCreateImageView"
 # Written by stb_image_write.h
+##DebugTextEncoding
+##DebugTextEncodingBuf
 ##filter_shader
 ##search_shader
 #define texture2D texture2DRect
 #extension GL_OES_EGL_image_external : require
+$?Null GPU is enabled
 % SHALL?j!AU?? R??.COPYRIGHT HOLDE?
 %s (PATCH OFF)
 %s (PATCH ON)
 %s bitstream malformed, no startcode found, use the video bitstream filter '%s_mp4toannexb' to fix it ('-bsf:v %s_mp4toannexb' option with ffmpeg)
 %s, ID3D11DeviceContext::OMGetRenderTargets failed
 %u bpp BMP images are not supported
-(atlas->RendererHasTextures == false) && "Called ImFontAtlas::Build() before ImGuiBackendFlags_RendererHasTextures got set! With new backends: you don't need to call Build()." at C:/Projetos/Pink-shadPS4/externals/imgui/imgui_draw.cpp:2829
-(atlas->TexIsBuilt) && "Backend does not support ImGuiBackendFlags_RendererHasTextures, and font atlas is not built! Update backend OR make sure you called ImGui_ImplXXXX_NewFrame() function for renderer backend, which should call io.Fonts->GetTexDataAsRGBA32() / GetTexDataAsAlpha8()." at C:/Projetos/Pink-shadPS4/externals/imgui/imgui_draw.cpp:2827
+&?mmSPI_SHADER_PGM_LO_VS
+(atlas->RendererHasTextures == false) && "Called ImFontAtlas::Build() before ImGuiBackendFlags_RendererHasTextures got set! With new backends: you don't need to call Build()." at I:/EMULADORES/Playstation 4/shadPS4-src/externals/imgui/imgui_draw.cpp:2829
+(atlas->TexIsBuilt) && "Backend does not support ImGuiBackendFlags_RendererHasTextures, and font atlas is not built! Update backend OR make sure you called ImGui_ImplXXXX_NewFrame() function for renderer backend, which should call io.Fonts->GetTexDataAsRGBA32() / GetTexDataAsAlpha8()." at I:/EMULADORES/Playstation 4/shadPS4-src/externals/imgui/imgui_draw.cpp:2827
 (Debug Log: Auto-disabled some ImGuiDebugLogFlags after 2 frames)
-(g.FrameCount == 0 || g.FrameCountEnded == g.FrameCount) && "Forgot to call Render() or EndFrame() at the end of the previous frame?" at C:/Projetos/Pink-shadPS4/externals/imgui/imgui.cpp:11758
-(g.IO.BackendRendererUserData == 0) && "Forgot to shutdown Renderer backend?" at C:/Projetos/Pink-shadPS4/externals/imgui/imgui.cpp:4632
+(g.FrameCount == 0 || g.FrameCountEnded == g.FrameCount) && "Forgot to call Render() or EndFrame() at the end of the previous frame?" at I:/EMULADORES/Playstation 4/shadPS4-src/externals/imgui/imgui.cpp:11758
+(g.IO.BackendRendererUserData == 0) && "Forgot to shutdown Renderer backend?" at I:/EMULADORES/Playstation 4/shadPS4-src/externals/imgui/imgui.cpp:4632
 (Standard system devices) 
 (STUBBED) called id={}, resolveRetry={}, resolveTimeout={}, connTimeout={}, sendTimeout={}, recvTimeout={}
 (STUBBED) called, device_type = {}, handle = {}
 (STUBBED) image_size = {} , jpeg_size = {} , image_width = {} , image_height = {} , image_pitch = {} , pixel_format = {} , encode_mode = {} , color_space = {} , sampling_type = {} , compression_ratio = {} , restart_interval = {}
-(viewport->RendererUserData == 0 && viewport->PlatformUserData == 0 && viewport->PlatformHandle == 0) && "Backend or app forgot to call DestroyPlatformWindows()?" at C:/Projetos/Pink-shadPS4/externals/imgui/imgui.cpp:4636
+(viewport->RendererUserData == 0 && viewport->PlatformUserData == 0 && viewport->PlatformHandle == 0) && "Backend or app forgot to call DestroyPlatformWindows()?" at I:/EMULADORES/Playstation 4/shadPS4-src/externals/imgui/imgui.cpp:4636
+**DebugBreak**
 *We recommend a square resolution image, for example 200x200, 500x500, the same size as the height and width.
 . In Drop File for   GlobalLock, format %08x '%s', memory (%lu) %p
 . In Drop Text for   GlobalLock, format %08x '%s', memory (%lu) %p
 . In Drop Text for StringToUTF8, format %08x '%s', memory (%lu) %p
-.?AUDeviceEnumHelper@?A0x2AB8DC7B@@
+.?AUDeviceEnumHelper@?A0x1026306D@@
 .?AV?$_Func_base@V?$shared_ptr@VBaseDevice@Devices@Core@@@std@@IPEBDHG@std@@
 .?AV?$_Func_impl_no_alloc@P6A?AV?$shared_ptr@VBaseDevice@Devices@Core@@@std@@IPEBDHG@ZV12@IPEBDHG@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_0>@?0??MapFile@MemoryManager@Core@@QEAAHPEAPEAX_K1W4MemoryProt@4@W4MemoryMapFlags@4@H_J@Z@XPEAE_K_KI_K@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_0>@?0??PatchPhiNodes@?A0xA0D733C3@SPIRV@Backend@Shader@@YAXAEBUProgram@IR@5@AEAVEmitContext@345@@Z@U?$pair@UId@Sirit@@U12@@std@@_KUId@Sirit@@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_0>@?0??PatchPhiNodes@?A0xA3A562D1@SPIRV@Backend@Shader@@YAXAEBUProgram@IR@5@AEAVEmitContext@345@@Z@U?$pair@UId@Sirit@@U12@@std@@_KUId@Sirit@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_0>@?0??RegisterLib@NpManager@Np@Libraries@@YAXPEAVSymbolsResolver@Loader@Core@@@Z@XHW4OrbisNpState@345@@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_0>@?0??WaitAhead@Scheduler@Vulkan@@QEAAX_N@Z@_N$$V@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_0>@?0??WaitHostRead@Semaphore@Vulkan@@QEAAX_K@Z@_N$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_0>@?0??WarmUp@PipelineCache@Vulkan@@QEAAXXZ@X$$QEAV?$vector@EV?$allocator@E@std@@@std@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_0>@@V?$shared_ptr@VBaseDevice@Devices@Core@@@std@@IPEBDHG@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?0???$make_override@UDebugSettings@@_N@@YA?AUOverrideItem@@PEBDPEQDebugSettings@@U?$Setting@_N@@@Z@XPEAXAEBV?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@json_abi_v3_12_0@nlohmann@@V?$vector@EV?$allocator@E@std@@@2@X@json_abi_v3_12_0@nlohmann@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_1>@?0???$make_override@UGPUSettings@@_K@@YA?AUOverrideItem@@PEBDPEQGPUSettings@@U?$Setting@_K@@@Z@XPEAXAEBV?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@json_abi_v3_12_0@nlohmann@@V?$vector@EV?$allocator@E@std@@@2@X@json_abi_v3_12_0@nlohmann@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?0???$make_override@UGPUSettings@@_N@@YA?AUOverrideItem@@PEBDPEQGPUSettings@@U?$Setting@_N@@@Z@XPEAXAEBV?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@json_abi_v3_12_0@nlohmann@@V?$vector@EV?$allocator@E@std@@@2@X@json_abi_v3_12_0@nlohmann@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?0???$make_override@UGPUSettings@@H@@YA?AUOverrideItem@@PEBDPEQGPUSettings@@U?$Setting@H@@@Z@XPEAXAEBV?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@json_abi_v3_12_0@nlohmann@@V?$vector@EV?$allocator@E@std@@@2@X@json_abi_v3_12_0@nlohmann@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?0???$make_override@UGPUSettings@@I@@YA?AUOverrideItem@@PEBDPEQGPUSettings@@U?$Setting@I@@@Z@XPEAXAEBV?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@json_abi_v3_12_0@nlohmann@@V?$vector@EV?$allocator@E@std@@@2@X@json_abi_v3_12_0@nlohmann@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?0???$make_override@UGPUSettings@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@YA?AUOverrideItem@@PEBDPEQGPUSettings@@U?$Setting@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@@Z@XPEAXAEBV?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@json_abi_v3_12_0@nlohmann@@V?$vector@EV?$allocator@E@std@@@2@X@json_abi_v3_12_0@nlohmann@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?0???$make_override@UVulkanSettings@@_N@@YA?AUOverrideItem@@PEBDPEQVulkanSettings@@U?$Setting@_N@@@Z@XPEAXAEBV?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@json_abi_v3_12_0@nlohmann@@V?$vector@EV?$allocator@E@std@@@2@X@json_abi_v3_12_0@nlohmann@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?0???$make_override@UVulkanSettings@@H@@YA?AUOverrideItem@@PEBDPEQVulkanSettings@@U?$Setting@H@@@Z@XPEAXAEBV?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@json_abi_v3_12_0@nlohmann@@V?$vector@EV?$allocator@E@std@@@2@X@json_abi_v3_12_0@nlohmann@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_1>@?0???0Rasterizer@Vulkan@@QEAA@AEBVInstance@3@AEAVScheduler@3@AEAVRuntime@3@PEAULiverpool@AmdGpu@@@Z@_N_KPEAX_K@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?0???0SignalImpl@VideoCore@@QEAA@PEAVRasterizer@Vulkan@@@Z@X_K_K@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?0??MapFile@MemoryManager@Core@@QEAAHPEAPEAX_K1W4MemoryProt@4@W4MemoryMapFlags@4@H_J@Z@XPEAE_K@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_1>@?0??Wait@Semaphore@Vulkan@@QEAAX_K@Z@_N$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@@V?$shared_ptr@VBaseDevice@Devices@Core@@@std@@IPEBDHG@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?0???$make_override@UDebugSettings@@_N@@YA?AUOverrideItem@@PEBDPEQDebugSettings@@U?$Setting@_N@@@Z@V?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@json_abi_v3_12_0@nlohmann@@V?$vector@EV?$allocator@E@std@@@2@X@json_abi_v3_12_0@nlohmann@@PEBX@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_2>@?0???$make_override@UGPUSettings@@_K@@YA?AUOverrideItem@@PEBDPEQGPUSettings@@U?$Setting@_K@@@Z@V?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@json_abi_v3_12_0@nlohmann@@V?$vector@EV?$allocator@E@std@@@2@X@json_abi_v3_12_0@nlohmann@@PEBX@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?0???$make_override@UGPUSettings@@_N@@YA?AUOverrideItem@@PEBDPEQGPUSettings@@U?$Setting@_N@@@Z@V?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@json_abi_v3_12_0@nlohmann@@V?$vector@EV?$allocator@E@std@@@2@X@json_abi_v3_12_0@nlohmann@@PEBX@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?0???$make_override@UGPUSettings@@H@@YA?AUOverrideItem@@PEBDPEQGPUSettings@@U?$Setting@H@@@Z@V?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@json_abi_v3_12_0@nlohmann@@V?$vector@EV?$allocator@E@std@@@2@X@json_abi_v3_12_0@nlohmann@@PEBX@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?0???$make_override@UGPUSettings@@I@@YA?AUOverrideItem@@PEBDPEQGPUSettings@@U?$Setting@I@@@Z@V?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@json_abi_v3_12_0@nlohmann@@V?$vector@EV?$allocator@E@std@@@2@X@json_abi_v3_12_0@nlohmann@@PEBX@std@@
@@ -228,7 +235,6 @@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?0??MapFile@MemoryManager@Core@@QEAAHPEAPEAX_K1W4MemoryProt@4@W4MemoryMapFlags@4@H_J@Z@XPEAE_KI@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@@V?$shared_ptr@VBaseDevice@Devices@Core@@@std@@IPEBDHG@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_3>@?0???$make_override@UDebugSettings@@_N@@YA?AUOverrideItem@@PEBDPEQDebugSettings@@U?$Setting@_N@@@Z@XPEAX@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_3>@?0???$make_override@UGPUSettings@@_K@@YA?AUOverrideItem@@PEBDPEQGPUSettings@@U?$Setting@_K@@@Z@XPEAX@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_3>@?0???$make_override@UGPUSettings@@_N@@YA?AUOverrideItem@@PEBDPEQGPUSettings@@U?$Setting@_N@@@Z@XPEAX@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_3>@?0???$make_override@UGPUSettings@@H@@YA?AUOverrideItem@@PEBDPEQGPUSettings@@U?$Setting@H@@@Z@XPEAX@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_3>@?0???$make_override@UGPUSettings@@I@@YA?AUOverrideItem@@PEBDPEQGPUSettings@@U?$Setting@I@@@Z@XPEAX@std@@
@@ -243,7 +249,6 @@
 .?AV?$_Func_impl_no_alloc@V<lambda_8>@@V?$shared_ptr@VBaseDevice@Devices@Core@@@std@@IPEBDHG@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_9>@@V?$shared_ptr@VBaseDevice@Devices@Core@@@std@@IPEBDHG@std@@
 .?AV?$_Ref_count@VBaseDevice@Devices@Core@@@std@@
-.?AV?$_Ref_count_obj2@UBindCache@Vulkan@@@std@@
 .?AV?$_Ref_count_obj2@UFrameDump@DebugStateType@@@std@@
 .?AV?$_Ref_count_obj2@UResolver@Net@Libraries@@@std@@
 .?AV?$_Ref_count_obj2@VConsoleDevice@Devices@Core@@@std@@
@@ -255,35 +260,29 @@
 .?AV?$_Ref_count_obj2@VZeroDevice@Devices@Core@@@std@@
 .?AV?$Callable@V<lambda_0>@?0??PrepareFrame@Presenter@Vulkan@@QEAAPEAUFrame@4@AEBUBufferAttributeGroup@VideoOut@Libraries@@_K@Z@@?$UniqueFunction@X$$V@Common@@
 .?AV?$Callable@V<lambda_0>@?0??ReinterpretColorAsMsDepth@BlitHelper@VideoCore@@QEAAXIIIW4Format@vk@@0VImage@6@1@Z@@?$UniqueFunction@X$$V@Common@@
-.?AV?$Callable@V<lambda_1>@?0???$SendCommand@$00$$CBV<lambda_5>@?0??ReadMemory@BufferCache@VideoCore@@QEAAX_K0_N1@Z@@Liverpool@AmdGpu@@QEAAX$$QEBV<lambda_5>@?0??ReadMemory@BufferCache@VideoCore@@QEAAX_K0_N1@Z@@Z@@?$UniqueFunction@X$$V@Common@@
+.?AV?$Callable@V<lambda_1>@?0???$SendCommand@$00$$CBV<lambda_2>@?0??ReadMemory@BufferCache@VideoCore@@QEAAX_K0_N1@Z@@Liverpool@AmdGpu@@QEAAX$$QEBV<lambda_2>@?0??ReadMemory@BufferCache@VideoCore@@QEAAX_K0_N1@Z@@Z@@?$UniqueFunction@X$$V@Common@@
 .?AV?$Callable@V<lambda_1>@?0??CopyBetweenMsImages@BlitHelper@VideoCore@@QEAAXIIIW4Format@vk@@_NVImage@6@2@Z@@?$UniqueFunction@X$$V@Common@@
-.?AV?$Callable@V<lambda_12>@?0??SubmitPendingArenaBinds@BufferCache@VideoCore@@QEAAXAEAUSubmitInfo@Vulkan@@@Z@@?$UniqueFunction@X$$V@Common@@
+.?AV?$Callable@V<lambda_11>@?0??ReleaseMemory@BufferCache@VideoCore@@QEAAX_K0@Z@@?$UniqueFunction@X$$V@Common@@
+.?AV?$Callable@V<lambda_14>@?0??UnmapMemory@Rasterizer@Vulkan@@QEAAX_K0@Z@@?$UniqueFunction@X$$V@Common@@
+.?AV?$Callable@V<lambda_2>@?0???0Rasterizer@Vulkan@@QEAA@AEBVInstance@3@AEAVScheduler@3@AEAVRuntime@3@PEAULiverpool@AmdGpu@@@Z@@?$UniqueFunction@XAEAUSubmitInfo@Vulkan@@@Common@@
 .?AV?$Callable@V<lambda_2>@?0??DownloadImageMemory@TextureCache@VideoCore@@AEAAXUSlotId@Common@@_N@Z@@?$UniqueFunction@X$$V@Common@@
 .?AV?$Callable@V<lambda_2>@?0??Present@Presenter@Vulkan@@QEAAXPEAUFrame@4@_N1@Z@@?$UniqueFunction@X$$V@Common@@
-.?AV?$Callable@V<lambda_20>@?0??ProcessGraphics@Liverpool@AmdGpu@@AEAA?AUTask@34@V?$span@$$CBI$0?0@std@@0@Z@@?$UniqueFunction@X$$V@Common@@
-.?AV?$Callable@V<lambda_21>@?0??DeleteImage@TextureCache@VideoCore@@AEAAXUSlotId@Common@@@Z@@?$UniqueFunction@X$$V@Common@@
-.?AV?$Callable@V<lambda_4>@?0???0Rasterizer@Vulkan@@QEAA@AEBVInstance@3@AEAVScheduler@3@AEAVRuntime@3@PEAULiverpool@AmdGpu@@@Z@@?$UniqueFunction@X$$V@Common@@
-.?AV?$Callable@V<lambda_4>@?0??ReleaseCpuAuthoritativeRange@BufferCache@VideoCore@@QEAAX_K0@Z@@?$UniqueFunction@X$$V@Common@@
-.?AV?$Callable@V<lambda_5>@?0???0Rasterizer@Vulkan@@QEAA@AEBVInstance@3@AEAVScheduler@3@AEAVRuntime@3@PEAULiverpool@AmdGpu@@@Z@@?$UniqueFunction@XAEAUSubmitInfo@Vulkan@@@Common@@
+.?AV?$Callable@V<lambda_22>@?0??DeleteImage@TextureCache@VideoCore@@AEAAXUSlotId@Common@@@Z@@?$UniqueFunction@X$$V@Common@@
+.?AV?$Callable@V<lambda_3>@?0??DumpImage@TextureCache@VideoCore@@QEAAXUSlotId@Common@@AEBVpath@filesystem@std@@@Z@@?$UniqueFunction@X$$V@Common@@
 .?AV<lambda_0>@?0??MapFile@MemoryManager@Core@@QEAAHPEAPEAX_K1W4MemoryProt@3@W4MemoryMapFlags@3@H_J@Z@
-.?AV<lambda_0>@?0??PatchPhiNodes@?A0xA0D733C3@SPIRV@Backend@Shader@@YAXAEBUProgram@IR@4@AEAVEmitContext@234@@Z@
+.?AV<lambda_0>@?0??PatchPhiNodes@?A0xA3A562D1@SPIRV@Backend@Shader@@YAXAEBUProgram@IR@4@AEAVEmitContext@234@@Z@
 .?AV<lambda_0>@?0??RegisterLib@NpManager@Np@Libraries@@YAXPEAVSymbolsResolver@Loader@Core@@@Z@
-.?AV<lambda_0>@?0??WaitAhead@Scheduler@Vulkan@@QEAAX_N@Z@
-.?AV<lambda_0>@?0??WaitHostRead@Semaphore@Vulkan@@QEAAX_K@Z@
 .?AV<lambda_0>@?0??WarmUp@PipelineCache@Vulkan@@QEAAXXZ@
 .?AV<lambda_1>@?0???$make_override@UDebugSettings@@_N@@YA?AUOverrideItem@@PEBDPEQDebugSettings@@U?$Setting@_N@@@Z@
-.?AV<lambda_1>@?0???$make_override@UGPUSettings@@_K@@YA?AUOverrideItem@@PEBDPEQGPUSettings@@U?$Setting@_K@@@Z@
 .?AV<lambda_1>@?0???$make_override@UGPUSettings@@_N@@YA?AUOverrideItem@@PEBDPEQGPUSettings@@U?$Setting@_N@@@Z@
 .?AV<lambda_1>@?0???$make_override@UGPUSettings@@H@@YA?AUOverrideItem@@PEBDPEQGPUSettings@@U?$Setting@H@@@Z@
 .?AV<lambda_1>@?0???$make_override@UGPUSettings@@I@@YA?AUOverrideItem@@PEBDPEQGPUSettings@@U?$Setting@I@@@Z@
 .?AV<lambda_1>@?0???$make_override@UGPUSettings@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@YA?AUOverrideItem@@PEBDPEQGPUSettings@@U?$Setting@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@@Z@
 .?AV<lambda_1>@?0???$make_override@UVulkanSettings@@_N@@YA?AUOverrideItem@@PEBDPEQVulkanSettings@@U?$Setting@_N@@@Z@
 .?AV<lambda_1>@?0???$make_override@UVulkanSettings@@H@@YA?AUOverrideItem@@PEBDPEQVulkanSettings@@U?$Setting@H@@@Z@
-.?AV<lambda_1>@?0???0Rasterizer@Vulkan@@QEAA@AEBVInstance@2@AEAVScheduler@2@AEAVRuntime@2@PEAULiverpool@AmdGpu@@@Z@
+.?AV<lambda_1>@?0???0SignalImpl@VideoCore@@QEAA@PEAVRasterizer@Vulkan@@@Z@
 .?AV<lambda_1>@?0??MapFile@MemoryManager@Core@@QEAAHPEAPEAX_K1W4MemoryProt@3@W4MemoryMapFlags@3@H_J@Z@
-.?AV<lambda_1>@?0??Wait@Semaphore@Vulkan@@QEAAX_K@Z@
 .?AV<lambda_2>@?0???$make_override@UDebugSettings@@_N@@YA?AUOverrideItem@@PEBDPEQDebugSettings@@U?$Setting@_N@@@Z@
-.?AV<lambda_2>@?0???$make_override@UGPUSettings@@_K@@YA?AUOverrideItem@@PEBDPEQGPUSettings@@U?$Setting@_K@@@Z@
 .?AV<lambda_2>@?0???$make_override@UGPUSettings@@_N@@YA?AUOverrideItem@@PEBDPEQGPUSettings@@U?$Setting@_N@@@Z@
 .?AV<lambda_2>@?0???$make_override@UGPUSettings@@H@@YA?AUOverrideItem@@PEBDPEQGPUSettings@@U?$Setting@H@@@Z@
 .?AV<lambda_2>@?0???$make_override@UGPUSettings@@I@@YA?AUOverrideItem@@PEBDPEQGPUSettings@@U?$Setting@I@@@Z@
@@ -292,7 +291,6 @@
 .?AV<lambda_2>@?0???$make_override@UVulkanSettings@@H@@YA?AUOverrideItem@@PEBDPEQVulkanSettings@@U?$Setting@H@@@Z@
 .?AV<lambda_2>@?0??MapFile@MemoryManager@Core@@QEAAHPEAPEAX_K1W4MemoryProt@3@W4MemoryMapFlags@3@H_J@Z@
 .?AV<lambda_3>@?0???$make_override@UDebugSettings@@_N@@YA?AUOverrideItem@@PEBDPEQDebugSettings@@U?$Setting@_N@@@Z@
-.?AV<lambda_3>@?0???$make_override@UGPUSettings@@_K@@YA?AUOverrideItem@@PEBDPEQGPUSettings@@U?$Setting@_K@@@Z@
 .?AV<lambda_3>@?0???$make_override@UGPUSettings@@_N@@YA?AUOverrideItem@@PEBDPEQGPUSettings@@U?$Setting@_N@@@Z@
 .?AV<lambda_3>@?0???$make_override@UGPUSettings@@H@@YA?AUOverrideItem@@PEBDPEQGPUSettings@@U?$Setting@H@@@Z@
 .?AV<lambda_3>@?0???$make_override@UGPUSettings@@I@@YA?AUOverrideItem@@PEBDPEQGPUSettings@@U?$Setting@I@@@Z@
@@ -300,11 +298,18 @@
 .?AV<lambda_3>@?0???$make_override@UVulkanSettings@@_N@@YA?AUOverrideItem@@PEBDPEQVulkanSettings@@U?$Setting@_N@@@Z@
 .?AV<lambda_3>@?0???$make_override@UVulkanSettings@@H@@YA?AUOverrideItem@@PEBDPEQVulkanSettings@@U?$Setting@H@@@Z@
 .?AVBaseDevice@Devices@Core@@
-.?AVBrokenShaderWatch@?A0x789BEBB2@Vulkan@@
 .?AVCallableBase@?$UniqueFunction@XAEAUSubmitInfo@Vulkan@@@Common@@
 .?AVCommandPool@Vulkan@@
 .?AVComputePipeline@Vulkan@@
 .?AVConsoleDevice@Devices@Core@@
+.?AVCopyingFileInputStream@FileInputStream@io@protobuf@google@@
+.?AVCopyingFileOutputStream@FileOutputStream@io@protobuf@google@@
+.?AVCopyingInputStream@io@protobuf@google@@
+.?AVCopyingInputStreamAdaptor@io@protobuf@google@@
+.?AVCopyingIstreamInputStream@IstreamInputStream@io@protobuf@google@@
+.?AVCopyingOstreamOutputStream@OstreamOutputStream@io@protobuf@google@@
+.?AVCopyingOutputStream@io@protobuf@google@@
+.?AVCopyingOutputStreamAdaptor@io@protobuf@google@@
 .?AVDeciTtyDevice@Devices@Core@@
 .?AVGraphicsPipeline@Vulkan@@
 .?AVLogger@Devices@Core@@
@@ -318,17 +323,26 @@
 .?AVSymbolsResolver@Loader@Core@@
 .?AVURandomDevice@Devices@Core@@
 .?AVValidationError@CLI@@
-.?AVWindowsDebuggerLogSink@?A0x9B93630E@log_internal@lts_20250512@absl@@
+.?AVWindowsDebuggerLogSink@?A0xF2430996@log_internal@lts_20250512@absl@@
+.?AVZeroCopyCodedInputStream@protobuf@google@@
+.?AVZeroCopyInputStream@io@protobuf@google@@
 .?AVZeroCopyOutputStream@io@protobuf@google@@
 .?AVZeroDevice@Devices@Core@@
 .P6A?AV?$shared_ptr@VBaseDevice@Devices@Core@@@std@@IPEBDHG@Z
-.workarounds.json
 /tamdih
 ;}?9V,*!kgFX+GD~
 ;ENABLE_MEMORY_PATCH
 ?:dx.shaderModelS??
+?;ConvertImageViewType
+????????????????????????????Expected image size %dx%d, actual size %dx%d
 ??????<??uGh?#???(c) Copyright LEGO 2014??U
-????I?ryShaderH?
+????F1?D??????`?Failed to get IAudioRenderClient: {:#x}
+????Video memory budget exceeded, allocating images past it
+???]???????Blit combination not supported
+???A???n???n???????????????n???????????n???I:/EMULADORES/Playstation 4/shadPS4-src/src/core/libraries/kernel/memory.cpp
+???SDL_RENDER_OPENGLES2_TEXCOORD_PRECISION
+???Unsupported surface format
+??@Device not supported by the lg4ff hidapi haptic driver
 ??0GPU@hwinfo@@AEAA@XZ
 ??0GPU@hwinfo@@QEAA@AEBV01@@Z
 ??0Memory@hwinfo@@QEAA@AEBV01@@Z
@@ -343,21 +357,27 @@
 ??sgfxtqsx??????
 ??sYaGfX?D?
 ??T$dH??cAMDH
+?@SDL_RENDER_GPU_DEBUG
 ?__ExceptionPtrCopy@@YAXPEAXPEBX@Z
 ?__ExceptionPtrCopyException@@YAXPEAXPEBX1@Z
 ?_Random_device@std@@YAIXZ
 ?+??fixE?}
+?4?I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/frontend/translate/scalar_alu.cpp
+?8?b~8???8???8?E?8?RenderTarget0
 ?AdobeIdentityCopyright 2014-2021 ? - (http://www.a?2'.com/). ??= is a trademark of Google Inc.?!??  ??# JP ???
 ?AMD_H?F
 ?AMdOeat
 ?aMdYB
 ?available_Bytes@Memory@hwinfo@@QEBA_JXZ
 ?CustomRendered
+?Debug message too long ({} >= {}):
 ?DeviceSettingDescription
-?Ek?<I?Fixed/UTL?\$ ?D$(C?T$)Ai?u?????
+?EPgpu_f?ETidH?UPH???
 ?free_Bytes@Memory@hwinfo@@QEBA_JXZ
 ?g?_?`gFXGCN???u?}???????h?k?p??
 ?g_eboot_address@MemoryPatcher@@3_KA
+?Gfx????????VH?? H???CK
+?h?@???*l&Z?Failed to get device endpoint: {:#x}
 ?h?a?`gFXH@N???u?}???????l?o?r??
 ?I?-patch.zL1?
 ?L1CacheSize_Bytes@CPU@hwinfo@@QEBA_JXZ
@@ -365,9 +385,10 @@
 ?L3CacheSize_Bytes@CPU@hwinfo@@QEBA_JXZ
 ?modules@Memory@hwinfo@@QEBAAEBV?$vector@UModule@Memory@hwinfo@@V?$allocator@UModule@Memory@hwinfo@@@std@@@std@@XZ
 ?p#Hack?hb?
+?SDL.gpu.device.create.xr.layers.count
 ?total_Bytes@Memory@hwinfo@@QEBA_JXZ
 ?u=??cAMDuXI?
-@L9gPu?M??t&1?
+?wSDL.surface.tonemap
 [aax] audible_fixed_key value needs to be 16 bytes!
 [d3d12] Cannot allocate more than %d textures!
 [debug] 
@@ -423,6 +444,7 @@ __ubsan_handle_dynamic_type_cache_miss_abort
 __ubsan_vptr_type_cache
 _00/image
 _Atomic_copy
+_debug
 _OrbisTextureImage2DCanvas
 _padebug
 _PJP_C_Copyright
@@ -441,6 +463,7 @@ _sceNpMemoryHeapShowMemoryStat
 _Ux86_64_flush_cache
 _Ux86_64_get_elf_image
 _Vacopy
+_wsopen_dispatch
 _Z12Image_SaveAsiP11_MonoStringPKN3sce3pss4core7imaging19ImageCompressOptionE
 _Z13Image_ConvertijjPi
 _Z20Ime_DicAddWordNativeimP11_MonoStringS0_
@@ -5088,7 +5111,6 @@ _ZTVN9Inspector35DOMDebuggerBackendDispatcherHandlerE
 _ZTVN9Inspector38ScriptProfilerBackendDispatcherHandlerE
 _ZTVN9Inspector40ApplicationCacheBackendDispatcherHandlerE
 {} is exported in vertex shader but tessellation-based primitive emulation is active. Not implemented yet.
-{} shader {:#018x}{}: {}
 {} stale pipelines were found. Consider re-generating the cache
 {}{} order {}HRTF rendering enabled, using "{}"
 {AmD`[???y????????
@@ -5099,19 +5121,21 @@ _ZTVN9Inspector40ApplicationCacheBackendDispatcherHandlerE
 +gpuhK6SW4I
 +L22kkFiXok
 <image_size>
-=== Device fault report ({}): {} addresses, {} vendor infos ===
-=== Last {} recorded GPU commands ({}), newest last ===
 === NEW IMAGE (requested) ===
 === OLD IMAGE (cached) ===
 ======== Load Module to Memory ========
-0 at C:/Projetos/Pink-shadPS4/src\core/devtools/widget/imgui_memory_editor.h:933
+0 at I:/EMULADORES/Playstation 4/shadPS4-src/src\core/devtools/widget/imgui_memory_editor.h:933
 0-pixel image
+1???1???1??J1??image/bmp
 1+GAmdx7sH4
 1HjjfIxI2vM
 4fgtGfXDrFc
+7?I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/ir/passes/inject_clip_distance_attributes.cpp
 76n9U18PgpU
 7Yt-ZIgpucA
+8?Enabling DMA for shader {:#x}
 8fAMdZCnewA
+8r4EJ3FiX4w
 8S3lfixsFds
 9HYAVefIxVQ
 A BMP image contains a pixel with a color out of the palette
@@ -5120,12 +5144,14 @@ A cancellation hasn't even been scheduled on the transfer for which the device i
 A device with a derived frame context cannot be used as the destination of a HW -> HW transfer.
 A device with a derived frame context cannot be used as the source of a HW -> HW transfer.
 A fragment_shader is required
+A hardware frames or device context is required for hardware accelerated decoding.
 A renderer can't target both a window and surface
-A;Gpu>C?D&
-A??fixE
+A;Gpu@A?D
+A??fIXe
 A+1YXWOGpuo
 AAC USAC fixed-point decoding
 Accessed non-GPU cached memory at {:#x}
+Accumulated %zu Mutex debug objects. If you see this in production, it may mean that the production code accidentally calls Mutex/CondVar::EnableDebugLog/EnableInvariantDebugging.
 AcquireNextImage
 Acquiring DirectInput device
 Added HIDAPI device '%s' VID 0x%.4x, PID 0x%.4x, bluetooth %d, version %d, serial %s, interface %d, interface_class %d, interface_subclass %d, interface_protocol %d, usage page 0x%.4x, usage 0x%.4x, path = %s, driver = %s (%s)
@@ -5201,7 +5227,6 @@ alcProcessContext behavior is not portable -- some implementations resume render
 alcRenderSamplesSOFT
 alcReopenDeviceSOFT
 alcResetDeviceSOFT
-alcSuspendContext behavior is not portable -- some implementations suspend all rendering, some only defer property changes, and some are completely no-op; consider using alcDevicePauseSOFT to suspend all rendering, or alDeferUpdatesSOFT to only defer property changes
 alDebugMessageCallbackDirectEXT
 alDebugMessageCallbackEXT
 alDebugMessageControlDirectEXT
@@ -5213,12 +5238,13 @@ alGetDebugMessageLogEXT
 Alias/Wavefront PIX image
 alIsExtensionPresent
 alIsExtensionPresentDirect
-AllocateShaderBinaryIndex
 allocating new device for session [%lX]
+Allocation error : not enough memory
 alPopDebugGroupDirectEXT
 alPopDebugGroupEXT
 alPushDebugGroupDirectEXT
 alPushDebugGroupEXT
+already patched
 amd64_set_fsbase
 AmdD3TzpP-c
 AMDhfKJMQNw
@@ -5236,6 +5262,7 @@ AnnotateTraceMemory
 AnnotateUnpublishMemoryRange
 api-ms-win-core-debug-l1-1-0.dll
 api-ms-win-core-memory-l1-1-0.dll
+api-ms-win-core-memory-l1-1-1.dll
 api-ms-win-core-memory-l1-1-5.dll
 api-ms-win-core-memory-l1-1-6.dll
 api-ms-win-core-memory-l1-1-7.dll
@@ -5251,7 +5278,7 @@ APS_SUFFIX
 asc[{}]:{}:DispatchDirect
 asc[{}]:{}:DispatchIndirect
 assert_fail_debug_msg
-atlas->RendererHasTextures == has_textures at C:/Projetos/Pink-shadPS4/externals/imgui/imgui.cpp:9716
+atlas->RendererHasTextures == has_textures at I:/EMULADORES/Playstation 4/shadPS4-src/externals/imgui/imgui.cpp:9716
 Attached debugging tool: {}
 attachment
 attempting control transfer targeted to interface %d
@@ -5266,15 +5293,13 @@ Audio Element parameter count %u is invalid for Channel representations
 Audio Element parameter count %u is invalid for Scene representations
 Audio stream not bound to an audio device
 Audio streams are bound to device ids from SDL_OpenAudioDevice, not raw physical devices
-AuTE0gFx
+AuTE0gFxZCI
 AuthenticAMD
 av_image_get_linesize failed
 AVHWDeviceContext
 AVIAMFMixPresentation
-AVIAMFParamDefinition
 AVMEDIA_TYPE_ATTACHMENT
 AypFIXRyX2o
-b5RaMD2J
 b5RaMD2J0So
 b8UFIX?
 Backend does not support ImGuiBackendFlags_RendererHasTextures, and font atlas is not built! Update backend OR make sure you called ImGui_ImplXXXX_NewFrame() function for renderer backend, which should call io.Fonts->GetTexDataAsRGBA32() / GetTexDataAsAlpha8().
@@ -5285,160 +5310,32 @@ bad fixed header decrypt
 bad src image pointers
 Barrier
 Basic Animated Texture Profile
-bd != nullptr && "Context or backend not initialized! Did you call ImGui_ImplSDL3_Init()?" at C:/Projetos/Pink-shadPS4/src/imgui/renderer/imgui_impl_sdl3.cpp:384
-bd != nullptr && "Context or backend not initialized! Did you call ImGui_ImplSDLRenderer3_Init()?" at C:/Projetos/Pink-shadPS4/src/imgui/big_picture/imgui_impl_sdlrenderer3.cpp:88
-bd != nullptr && "No platform backend to shutdown, or already shutdown?" at C:/Projetos/Pink-shadPS4/src/imgui/renderer/imgui_impl_sdl3.cpp:593
-bd != nullptr && "No platform backend to shutdown, or already shutdown?" at C:/Projetos/Pink-shadPS4/src/imgui/renderer/imgui_impl_sdl3.cpp:811
-bd != nullptr && "No renderer backend to shutdown, or already shutdown?" at C:/Projetos/Pink-shadPS4/src/imgui/big_picture/imgui_impl_sdlrenderer3.cpp:66
-bd != nullptr && "No renderer backend to shutdown, or already shutdown?" at C:/Projetos/Pink-shadPS4/src/imgui/renderer/imgui_impl_vulkan.cpp:1262
-bd != nullptr at C:/Projetos/Pink-shadPS4/src/imgui/renderer/imgui_impl_vulkan.cpp:480
+bd != nullptr && "Context or backend not initialized! Did you call ImGui_ImplSDL3_Init()?" at I:/EMULADORES/Playstation 4/shadPS4-src/src/imgui/renderer/imgui_impl_sdl3.cpp:384
+bd != nullptr && "Context or backend not initialized! Did you call ImGui_ImplSDLRenderer3_Init()?" at I:/EMULADORES/Playstation 4/shadPS4-src/src/imgui/big_picture/imgui_impl_sdlrenderer3.cpp:89
+bd != nullptr && "No platform backend to shutdown, or already shutdown?" at I:/EMULADORES/Playstation 4/shadPS4-src/src/imgui/renderer/imgui_impl_sdl3.cpp:593
+bd != nullptr && "No platform backend to shutdown, or already shutdown?" at I:/EMULADORES/Playstation 4/shadPS4-src/src/imgui/renderer/imgui_impl_sdl3.cpp:811
+bd != nullptr && "No renderer backend to shutdown, or already shutdown?" at I:/EMULADORES/Playstation 4/shadPS4-src/src/imgui/big_picture/imgui_impl_sdlrenderer3.cpp:66
+bd != nullptr && "No renderer backend to shutdown, or already shutdown?" at I:/EMULADORES/Playstation 4/shadPS4-src/src/imgui/renderer/imgui_impl_vulkan.cpp:1254
+bd != nullptr at I:/EMULADORES/Playstation 4/shadPS4-src/src/imgui/renderer/imgui_impl_vulkan.cpp:490
 bdjbg_copyPlanes
 before fixed_vop_rate
+BeginRendering
+BindRenderer: cached_style snapshot: hDpi={} vDpi={} scaleUnit={} baseScale={} scalePixelW={} scalePixelH={} effectWeightX={} effectWeightY={} slantRatio={}
 BindResourceMemory must be given either a VulkanBuffer or a VulkanTexture
 BindTextures
-Blit combination not supported
 -blITIdtUd0
 bMPSKf???v?????????{?y?xbUGPUA?
 BRender PIX image
 brender_pix
-BROKEN SHADER
-broken shader {:#x}
 Buffer binding in shader {:#x} isn't dword aligned
 BufferCache
+BufferDeviceAddress
+bufferImageGranularity
 bulk stream transfers are not yet supported on this platform
-C:/Projetos/Pink-shadPS4/externals/protobuf/src/google/protobuf/io/zero_copy_stream.cc
-C:/Projetos/Pink-shadPS4/externals/protobuf/src/google/protobuf/io/zero_copy_stream_impl_lite.cc
-C:/Projetos/Pink-shadPS4/src/common/memory_patcher.cpp
-C:/Projetos/Pink-shadPS4/src/core/cpu_patches.cpp
-C:/Projetos/Pink-shadPS4/src/core/debug_state.cpp
-C:/Projetos/Pink-shadPS4/src/core/file_sys/devices/console_device.cpp
-C:/Projetos/Pink-shadPS4/src/core/file_sys/devices/deci_tty_device.cpp
-C:/Projetos/Pink-shadPS4/src/core/file_sys/devices/logger.cpp
-C:/Projetos/Pink-shadPS4/src/core/file_sys/devices/random_device.cpp
-C:/Projetos/Pink-shadPS4/src/core/file_sys/devices/rng_device.cpp
-C:/Projetos/Pink-shadPS4/src/core/file_sys/devices/srandom_device.cpp
-C:/Projetos/Pink-shadPS4/src/core/file_sys/devices/urandom_device.cpp
-C:/Projetos/Pink-shadPS4/src/core/file_sys/devices/zero_device.cpp
-C:/Projetos/Pink-shadPS4/src/core/libraries/kernel/memory.cpp
-C:/Projetos/Pink-shadPS4/src/core/libraries/network/net_resolver.cpp
-C:/Projetos/Pink-shadPS4/src/core/libraries/save_data/save_memory.cpp
-C:/Projetos/Pink-shadPS4/src/core/memory.cpp
-C:/Projetos/Pink-shadPS4/src/imgui/renderer/imgui_core.cpp
-C:/Projetos/Pink-shadPS4/src/imgui/renderer/texture_manager.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/backend/spirv/emit_spirv.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/backend/spirv/emit_spirv_atomic.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/backend/spirv/emit_spirv_context_get_set.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/backend/spirv/emit_spirv_discard_frag.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/backend/spirv/emit_spirv_floating_point.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/backend/spirv/emit_spirv_image.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/backend/spirv/emit_spirv_integer.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/backend/spirv/emit_spirv_special.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/backend/spirv/emit_spirv_undefined.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/backend/spirv/emit_spirv_warp.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/backend/spirv/spirv_emit_context.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/frontend/control_flow_graph.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/frontend/copy_shader.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/frontend/decode.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/frontend/fetch_shader.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/frontend/format.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/frontend/instruction.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/frontend/structured_control_flow.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/frontend/translate/data_share.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/frontend/translate/export.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/frontend/translate/scalar_alu.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/frontend/translate/scalar_flow.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/frontend/translate/translate.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/frontend/translate/vector_alu.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/frontend/translate/vector_interpolation.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/frontend/translate/vector_memory.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/ir/abstract_syntax_list.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/ir/basic_block.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/ir/ir_emitter.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/ir/microinstruction.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/ir/passes/constant_propagation_pass.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/ir/passes/flatten_extended_userdata_pass.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/ir/passes/hull_shader_transform.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/ir/passes/inject_clip_distance_attributes.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/ir/passes/inverse_ballot_elimination_pass.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/ir/passes/lower_buffer_format_to_raw.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/ir/passes/lower_hardware_intrinsics.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/ir/passes/lower_phis_to_regs_pass.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/ir/passes/lower_user_clip_planes.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/ir/passes/lower_wave64_pass.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/ir/passes/phi_simplification_pass.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/ir/passes/readlane_elimination_pass.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/ir/passes/resource_discover_pass.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/ir/passes/resource_patching_pass.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/ir/passes/ring_access_elimination.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/ir/passes/shader_info_collection_pass.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/ir/passes/shared_memory_barrier_pass.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/ir/passes/shared_memory_to_storage_pass.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/ir/passes/ssa_rewrite_pass.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/ir/value.cpp
-C:/Projetos/Pink-shadPS4/src/shader_recompiler/recompiler.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/amdgpu/liverpool.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/amdgpu/pixel_format.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/amdgpu/tiling.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/buffer_cache/buffer.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/buffer_cache/buffer_cache.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/buffer_cache/fault_manager.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/cache_storage.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/renderdoc.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/renderer_vulkan/host_passes/fsr_pass.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/renderer_vulkan/host_passes/pp_pass.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/renderer_vulkan/liverpool_to_vk.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/renderer_vulkan/vk_compute_pipeline.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/renderer_vulkan/vk_graphics_pipeline.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/renderer_vulkan/vk_instance.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/renderer_vulkan/vk_pipeline_cache.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/renderer_vulkan/vk_pipeline_serialization.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/renderer_vulkan/vk_platform.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/renderer_vulkan/vk_presenter.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/renderer_vulkan/vk_rasterizer.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/renderer_vulkan/vk_recorder.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/renderer_vulkan/vk_resource_pool.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/renderer_vulkan/vk_runtime.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/renderer_vulkan/vk_scheduler.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/renderer_vulkan/vk_semaphore.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/renderer_vulkan/vk_shader_hle.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/renderer_vulkan/vk_shader_util.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/renderer_vulkan/vk_staging_buffer_pool.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/renderer_vulkan/vk_swapchain.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/texture_cache/blit_helper.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/texture_cache/image.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/texture_cache/image_barriers.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/texture_cache/image_info.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/texture_cache/image_view.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/texture_cache/sampler.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/texture_cache/texture_cache.cpp
-C:/Projetos/Pink-shadPS4/src/video_core/texture_cache/tile_manager.cpp
-C:/Projetos/Pink-shadPS4/src\core/loader/symbols_resolver.h
-C:/Projetos/Pink-shadPS4/src\shader_recompiler/backend/spirv/spirv_emit_context.h
-C:/Projetos/Pink-shadPS4/src\shader_recompiler/frontend/control_flow_graph.h
-C:/Projetos/Pink-shadPS4/src\shader_recompiler/frontend/instruction.h
-C:/Projetos/Pink-shadPS4/src\shader_recompiler/info.h
-C:/Projetos/Pink-shadPS4/src\shader_recompiler/ir/attribute.h
-C:/Projetos/Pink-shadPS4/src\shader_recompiler/ir/microinstruction.h
-C:/Projetos/Pink-shadPS4/src\shader_recompiler/ir/operand_helper.h
-C:/Projetos/Pink-shadPS4/src\shader_recompiler/ir/position.h
-C:/Projetos/Pink-shadPS4/src\shader_recompiler/ir/reg.h
-C:/Projetos/Pink-shadPS4/src\shader_recompiler/ir/reinterpret.h
-C:/Projetos/Pink-shadPS4/src\shader_recompiler/ir/srt_gvn_table.h
-C:/Projetos/Pink-shadPS4/src\shader_recompiler/ir/value.h
-C:/Projetos/Pink-shadPS4/src\shader_recompiler/resource.h
-C:/Projetos/Pink-shadPS4/src\video_core/amdgpu/liverpool.h
-C:/Projetos/Pink-shadPS4/src\video_core/amdgpu/pm4_cmds.h
-C:/Projetos/Pink-shadPS4/src\video_core/amdgpu/regs_depth.h
-C:/Projetos/Pink-shadPS4/src\video_core/amdgpu/regs_shader.h
-C:/Projetos/Pink-shadPS4/src\video_core/amdgpu/regs_vertex.h
-C:/Projetos/Pink-shadPS4/src\video_core/buffer_cache/buffer.h
-C:/Projetos/Pink-shadPS4/src\video_core/renderer_vulkan/liverpool_to_vk.h
-C:/Projetos/Pink-shadPS4/src\video_core/renderer_vulkan/vk_draw_trace.h
-C:/Projetos/Pink-shadPS4/src\video_core/renderer_vulkan/vk_gpu_checkpoints.h
-C:/Projetos/Pink-shadPS4/src\video_core/renderer_vulkan/vk_platform.h
-C:/Projetos/Pink-shadPS4/src\video_core/texture_cache/tile.h
+C?I:/EMULADORES/Playstation 4/shadPS4-src/src/video_core/renderer_vulkan/vk_shader_hle.cpp
 Cache archive {} is not found or archive is corrupted
 Cache dumped
+cache_config_descriptors
 cache_redirected_connection={} at {} level (id={})
 cache-control
 cached config descriptor %u (bConfigurationValue=%u, %u bytes)
@@ -5489,7 +5386,9 @@ called, resolverid = {}, hostname = {}, timeout = {}, retry = {}, flags = {}
 called: userId = {}, memorySize = {}
 cancel transfer failed error %d
 Cancel##validationdialog
+cancel_transfer
 cancellation not supported for this transfer's driver
+cancelling transfer %p from disconnect
 Cannot acquire a swapchain texture from an unclaimed window!
 Cannot acquire swapchain texture from an unclaimed window!
 Cannot allocate memory
@@ -5509,17 +5408,17 @@ Caught bad_alloc exception while creating capture device
 Caught bad_alloc exception while creating loopback device
 Caught bad_alloc exception while creating playback device
 Caught bad_alloc exception while reopening device
-CbufProbe STALE cs {:#x}: [{:#x}]={:#x} > {:#x} (seen {}, stale {}) V# base {:#x} size {:#x} words@{:#x} {:08x} cpu_modified={} gpu_modified={}
-CbufProbe: {} stale dispatches so far
 ccb copy buffer out of reserved space
 ccbGpuAddrs must not be NULL if ccbSizesInBytes is non-NULL
 certificate already present
+Check android_log_tag.exchange(tag_str->c_str(), std::memory_order_acq_rel) == kDefaultAndroidTag failed: 
 CheckFeatureSupport for UnrestrictedBufferTextureCopyPitchSupported failed. You may need to provide a vendored D3D12Core.dll through the Agility SDK on older platforms.
+Choose one way that doesn't interfere with what you are trying to debug!
 chroma_and_bit_depth_vps_present_flag=0 in first rep_format
-Clean read verify: byte {:#x} of {} at {:#x} was served as {:#04x}, the readback left {:#04x}
 Cleaning up OpenAL device '{}'
 Click %s Button to break in debugger! (remap w/ Ctrl+Shift)
 CloseConnectionAndDispatchDead
+CloseDevice
 CM_Get_Device_IDA
 CM_Get_Device_Interface_List_SizeW
 CM_Get_Device_Interface_ListW
@@ -5535,14 +5434,13 @@ coil_set_debugger_attached
 coil_set_debugger_port
 CollectDeviceParameters
 CollectImageFormatInfo
+CollectShader
 CollectShaderInfoPass
 color buffer format {} does not support COLOR_ATTACHMENT_BIT
 color transfer characteristics
-ColorAttachmentOutput
 Command to disassemble shaders. Example: dis.exe --raw "{src}"
 Command to disassemble shaders. Example: spirv-cross -V "{src}"
 Common.Memory
-compiled anyway; draws using it may render wrong
 Compiling {} shader {:#x} {}
 Compiling compute pipeline {:#x}
 Compiling graphics pipeline {:#x}
@@ -5557,6 +5455,7 @@ Compressed exports only supported for render targets
 Compute Pipeline {}
 Compute PipelineLayout {}
 compute_pipeline
+ComputePipeline
 ComputeSurfaceAddrFromCoordMacroTiled(u1;u1;u1;u1;u1;u1;
 ComputeSurfaceAddrFromCoordMicroTiled(u1;u1;u1;u1;u1;u1;
 Configured memory regions: flexible size = {:#x}, direct size = {:#x}
@@ -5564,12 +5463,16 @@ CONFLICTINGRENDERSTATE
 CONFLICTINGTEXTUREFILTER
 CONFLICTINGTEXTUREPALETTE
 content and data present
+Content-Disposition: attachment;
+Content-Transfer-Encoding: base64%s
+Content-Transfer-Encoding: base64%s%s
 Content-Type: image/jpeg
 Control Close SEND skipped: connId={} reason={} unresolved endpoint
+ControlTransfer
 ControlTransfer failed: %s
 ConvertImageType
-ConvertImageViewType
 ConvertReadbackToRgba8
+Copy as..
 Copy between different formats: src={}, dst={}. Result may be undefined.
 Copy Link###CopyLink
 Copy name
@@ -5580,14 +5483,21 @@ copy_gpu_buffers
 copy_opaque
 copy_pass
 COPY_SAMPLE
+copy_transfer_data
 CopyBetweenMsImages
 CopyCmdBuffers
 CopyColorAndDepth
-CopyData
 CopyFileExW
 CopyFileW
 copyGPUB
+copyGPUBuffers
+CopyImage
+Copying phi node
 copyright
+Copyright (c) 1995-1996 Guy Eric Schalnat, Group 42, Inc.
+Copyright (c) 1996-1997 Andreas Dilger
+Copyright (c) 1998-2002,2004,2006-2018 Glenn Randers-Pehrson
+Copyright (c) 2018-2024 Cosmin Truta
 Copyright (c) 2019,?
 copyright_message
 CopyShareReadWrite
@@ -5615,6 +5525,7 @@ Could not create the surfaces
 Could not create the texture
 Could not create the texture (%lx)
 Could not disassemble shader
+Could not enumerate Vulkan physical devices
 Could not fetch blit pipeline
 Could not find a valid EGL device to initialize
 Could not find adapter for D3D12Device
@@ -5660,10 +5571,6 @@ Couldn't get device capabilities
 Couldn't get device value capabilities
 Couldn't load an overriding SDL library. Please fix or remove the SDL3_DYNAMIC_API environment variable. Using the default SDL.
 Couldn't override SDL library. Using a newer SDL build might help. Please fix or remove the SDL3_DYNAMIC_API environment variable. Using the default SDL.
-cp_record_thread: {} was called on a recorded command buffer, but it has pointer arguments and no deep-copy thunk. Add one in vk_recorder.cpp
-cp_record_thread: {} with a pNext chain has no deep copy
-cp_record_thread: device functions are not loaded yet
-cp_record_thread: push descriptor write of type {} has no deep copy
 create frame image view
 create fsr intermediary image view
 create fsr output image view
@@ -5678,11 +5585,13 @@ Created loopback device {}
 Created new OpenAL device '{}'
 Created renderer: %s
 CreateDebugCallback
-createImage
+CreateDevice
+CreateDevice()
 CreateMsCopyPipeline
 CreateOffscreenPlainSurface()
 CreatePipelineLayouts
 CreatePixelShader()
+CreateSurface
 CreateTexture(D3DPOOL_DEFAULT)
 CreateTexture(D3DPOOL_SYSTEMMEM)
 Creating DirectInput device
@@ -5691,6 +5600,7 @@ Creating vulkan instance
 creation_time is not representable
 CRL path validation error
 Cross-device link
+Ctrl+C: copy path
 cZCJTMamDOE
 D3D11_CreateTexture
 D3D11_RenderReadPixels
@@ -5702,30 +5612,38 @@ D3D12: Could not find function D3D12CreateDevice in d3d12.dll
 D3D12: Failed to find adapter for D3D12Device
 D3D12_CreateGraphicsPipeline
 D3D12_CreateTexture
+D3D12CreateDevice
 D3D12GetDebugInterface
 d6X6gaMdp-Y
-data_type >= 0 && data_type < IM_ARRAYSIZE(descs) at C:/Projetos/Pink-shadPS4/src\core/devtools/widget/imgui_memory_editor.h:707
-data_type >= 0 && data_type < IM_ARRAYSIZE(sizes) at C:/Projetos/Pink-shadPS4/src\core/devtools/widget/imgui_memory_editor.h:713
+data_type >= 0 && data_type < IM_ARRAYSIZE(descs) at I:/EMULADORES/Playstation 4/shadPS4-src/src\core/devtools/widget/imgui_memory_editor.h:707
+data_type >= 0 && data_type < IM_ARRAYSIZE(sizes) at I:/EMULADORES/Playstation 4/shadPS4-src/src\core/devtools/widget/imgui_memory_editor.h:713
 Date out of range for SDL_Time representation; SDL_Time value clamped
+DB_RENDER_CONTROL
 DbCacheFlushAndInv
 dcb copy buffer out of reserved space
 dcbGpuAddrs and dcbSizesInBytes must not be NULL
 dcbGpuAddrs must not be NULL
 DDDzEJ2sgPU
+Dear ImGui Debug Log
+Dear ImGui Metrics/Debugger
+Debug Begin/BeginChild return value
+Debug breaks
 Debug message log overflow. Lost message:
 Debug message too long ({} >= {})
-Debug message too long ({} >= {}):
 Debug severity must be AL_DONT_CARE_EXT with IDs
 Debug source {:#04x} not allowed
 Debug source cannot be AL_DONT_CARE_EXT with IDs
 Debug type cannot be AL_DONT_CARE_EXT with IDs
 Debug##Default
+debug_du
 debug_dump
+debug_init
 DEBUG_INVOCATION
 DebugBreak
 DebugDum
 debugdump
 DebugPrint
+DebugPrint only supports up to {} format args
 DebugProfile
 DebugUtilsCallback
 Default capture device changed: 
@@ -5735,20 +5653,24 @@ DeleteImage
 DEPTH_COPY
 DepthStencilCopy:DR={:#x}:SR={:#x}:DW={:#x}:SW={:#x}
 Derived Image item of type %s
+Destroy cache and custom rectangles.
 destroy device %d.%d
 destroying HleFontString {} (memory iface={})
 detected device removed
 Detiler pipeline creation failed {}
 Device
 Device "{}" not found
+device %d.%d
 device %d.%d still referenced
 device '%s' has invalid descriptor!
 device '%s' has malformed DeviceInterfaceGUID string '%s', skipping
 device '%s' is no longer connected!
 Device '{}' not found, falling back to default
+Device added: 
 Device capture failed: {:#x}
 Device capture format
 device class GUID for session [%lX] changed
+device disconnected
 Device does not support requested present_mode!
 Device does not support requested swapchain composition!
 Device doesn't support rumble
@@ -5759,28 +5681,31 @@ device driver doesn't support querying max RAW_IO transfer size
 device driver doesn't support RAW_IO support query
 device driver doesn't support setting RAW_IO
 Device error: {}
+Device fault: {}
 Device handle closed while transfer was still being processed, but the device is still connected as far as we know
 Device init failed: {:#x}
 device instance ID for session [%lX] changed
-Device lost ({}); already reported
-Device lost ({}); device fault report unavailable
-Device lost ({}); vkGetDeviceFaultInfoEXT failed: {}
 Device lost and couldn't be recovered
+Device lost during ahead submit
+Device lost during ahead wait
 Device lost during submit
 Device lost during waiting for a frame
-Device lost while waiting for tick {}
+Device lost while waiting for GPU tick {}
 Device lost: {:#x}
 Device mix format
 Device name "{}" not found
 Device not found
-Device not supported by the lg4ff hidapi haptic driver
 Device or resource busy
 Device playback failed: {:#x}
 Device removed: 
 Device reset failure
 Device sample rate too large for HRTF ({}hz > {}hz)
+Device type %s expected for hardware decoding, but got %s.
 Device was already lost and can't accept new opens
+DEVICE_COHERENT_AMD
 DEVICE_FONT_NAME
+DEVICE_LOCAL
+DEVICE_UNCACHED_AMD
 DeviceHotplugThread
 DeviceInterfaceGUID
 DeviceInterfaceGUIDs
@@ -5789,19 +5714,16 @@ DeviceLocal
 DEVICELOST
 DeviceMemoryBarrier
 DEVICENOTRESET
+deviceType
+digraph shader {
 direct_memory_access_enabled
 DirectDraw Surface image decoder
 directMemoryAccess
+DirectMemoryQuery
 Disable automatic loading of game patches
 Disable the nullGpu config to show the game display
 DISPATCH
-DISPATCH_DIRECT {}x{}x{}
-DISPATCH_INDIRECT args={:#x}
 DISPATCH_INITIATOR
-dispatch_ms
-DispatchDirect
-dispatches
-DispatchIndirect
 DispatchMessageW
 DispatchPacket
 DispatchThreadMain
@@ -5813,22 +5735,21 @@ do_sync_bulk_transfer
 Downscaled image retrieval isn't supported yet!
 DPX (Digital Picture Exchange) image
 Draw calls: %.0f   Dispatches: %.0f
-DrawTrace armed at {:.1f} s: frames {}..{} readbacks_mode={}
-DrawTrace f={} #{}     {} {:#x} cpu_modified={} gpu_modified={} protect={:#x} watchers r={} w={}{}
 driver for device '%s' is reporting an issue (code: %lu) - skipping
 DS_GWS_BARRIER
 DST (Direct Stream Transfer)
 DttnxfCcGPU
 dump_shaders
+dumpShaders
 Duplicate mix_presentation_id %d
 dxgidebug.dll
 DXGIGetDebugInterface
 DXGIGetDebugInterface1
 DXVA2CreateDirect3DDeviceManager9
-E??E?UysYH?NetDebugH?}?f?E
-E?H?t DeviceH?}?H?U???w??
-E?H?t DeviceH?}?H?U?H?M`??w??i??H?Nx??(
+E?H?t DeviceH?}?H?U???w?????H???
+E?H?t DeviceH?}?H?U?H?M`??w??
 E?H?t DeviceH?u?H?U?H???
+E0H?c_deviceH?E6H?U0H????w?>
 e2GFx4DmimI
 efIxxU6DjXo
 EGL surface attribute callback returned NULL pointer
@@ -5839,7 +5760,10 @@ EGL_EXT_present_opaque
 EGL_KHR_surfaceless_context
 eglBindTexImage
 eglCopyBuffers
+eglCreatePbufferSurface
 eglCreatePixmapSurface
+eglCreateWindowSurface
+eglDestroySurface
 eglGetCurrentSurface
 eglPigletMemoryInfoSCE
 eglQueryDevicesEXT
@@ -5853,6 +5777,7 @@ ELF_ABI_VERSION_AMDGPU_HSA_V2
 ELF_ABI_VERSION_AMDGPU_HSA_V3
 ELF_ABI_VERSION_AMDGPU_HSA_V4
 ELF_ABI_VERSION_AMDGPU_HSA_V5
+Emergency texture collection freed {} images
 EmitDiscardShader
 EmitImageAtomicDec32
 EmitImageAtomicInc32
@@ -5861,7 +5786,6 @@ EmitImageQueryDimensions
 EmitImageRead
 EmitImageSampleRaw
 EmitImageWrite
-empty fault report: the driver gave no details, which does not rule out a shader memory fault
 Emulating scaled min/max blend with squared shader output on attachment {}
 Enable Direct Memory Access
 Enable patch
@@ -5869,18 +5793,18 @@ Enable Readback Linear Images
 Enable Shader Cache
 Enable 'shader_collect' in config to see shaders
 Enabled dxgi debugging.
-EnableGpuTiming
 Enabling d3d11 debugging.
-Enabling DMA for shader {:#x}
 Encountered a _mip instruction with MSAA image, and mipid is 0, skipping LoD
 Encountered a _mip instruction with MSAA image, and mipid is non-zero
 Encountered unresolvable image overlap with equal memory address.
+EnsureFontSetCache
 EnumDisplayDevicesW
+EnumeratePhysicalDevices
 Enumerating DirectInput devices
 EOF on memory BIO
-eop_label_delay_us with readback_ahead: the flicker it hides comes back with readback_ahead
 Error applying Patch, unknown type: {}
-error creating texture
+Error enumerating physical device displays
+Error enumerating physical devices
 Error generated on device {}, code {:#04x}
 Error getting a surface description
 Error opening memory stream
@@ -5903,7 +5827,6 @@ Exception in CPU Cache:
 Exception probing devices: {}
 exclamdown
 exclamdownsmall
-Expected image size %dx%d, actual size %dx%d
 extended->disable_device: {:032b}
 Extension present: type %i, len %i
 F32F64 __cdecl Shader::IR::IREmitter::FPAbs(const F32F64 &)
@@ -5927,14 +5850,14 @@ F32F64 __cdecl Shader::IR::IREmitter::FPSub(const F32F64 &, const F32F64 &)
 F32F64 __cdecl Shader::IR::IREmitter::FPTrunc(const F32F64 &)
 f7lbTTaMDlI
 fAIbZgFxkAw
-Failed allocating image with error {}: {}x{}x{} layers={} levels={} samples={} format={}
-Failed allocating texture with error {}
+Failed allocating image with error {}
 Failed enabling dxgi debugging.
 Failed getting dxgi debug interface.
 Failed loading dxgi debug library.
 Failed to acquire swapchain texture: %s
 Failed to allocate a %s/%s frame from a fixed pool of hardware frames.
 failed to allocate a new device structure
+Failed to allocate buffer arena memory: {}
 Failed to allocate memory
 Failed to allocate memory for audio port
 Failed to bind Direct3D device to device manager
@@ -6002,11 +5925,9 @@ Failed to free backing memory file handle
 Failed to free virtual memory
 Failed to get address for patch {}
 Failed to get buffer device address
-Failed to get device endpoint: {:#x}
 Failed to get device id: {:#x}
 Failed to get device state: {:#x}
 Failed to get device: {:#x}
-Failed to get IAudioRenderClient: {:#x}
 failed to get RAW_IO maximum transfer size for endpoint 0x%02X: %s
 Failed to get the minimum supported Vulkan API version.
 Failed to get vulkan graphics requirements, got OpenXR error %d
@@ -6018,9 +5939,7 @@ failed to initialize device '%s'
 Failed to initialize OpenAL device '{}'
 Failed to initialize pipeline resource layout!
 Failed to initialize Vulkan!
-Failed to initialize Win32 surface
 Failed to link shader program
-Failed to load image: {}
 Failed to load the shader %d
 Failed to load the shader %d: %s
 Failed to load vkGetInstanceProcAddr from Vulkan Portability library
@@ -6066,19 +5985,17 @@ Failed to wait for Vulkan device idle on mode change: {}
 Failed to wait for Vulkan device idle on shutdown: {}
 Fallback for ImageWrite with LOD
 Fault Buffer Parser Pipeline
-fault_gpu
-fault_gpu_ms
-fault_w_readback
 FcFontRenderPrepare
 fdebug
+Fetch shader has V{} = 1.0 which is ignored
 Fetch shader in indirect draw uses wrong base instance
 Fetch shader in indirect draw uses wrong base vertex
+FFailed allocating texture with error {}
 Files cannot be mapped to GPU memory
 FindImage
 FindImageFromRange
 FindPresentFormat
 FindPresentMode
-first incomplete readback-ahead copy id={} copy={}, queued after command seq {}, submitted {} ms before the report
 first_slot + num_bindings exceeds MAX_STORAGE_TEXTURES_PER_STAGE
 first_slot + num_bindings exceeds MAX_TEXTURE_SAMPLERS_PER_STAGE
 FITS (Flexible Image Transport System)
@@ -6086,10 +6003,11 @@ fiX2RRLQhak
 fIX8beKOiBw
 Fixed device latency: {}ns
 Fixed key used for handling Audible AAX files
+fixed point overflow ignored
+fixed point overflow in 
 Fixed/UTC
 FixedFit
 FixedSame
-fIXeH???>???A?
 fIxLs+X4zBo
 Fixq6tKtgGM
 Float16 denorm flushing is not supported by the GPU
@@ -6106,8 +6024,10 @@ Float64 denorm preserving is not supported by the GPU
 Float64 rounding to zero is not supported by the GPU
 Float64 signed zero/inf/nan preserve mode is not supported by the GPU
 flushed {} cached 301 redirect(s) for ctxId={}
+FOnDeviceStateChanged({}, {:#x})
 font memory requested: addr={} size={} subfont_index={} unique_id={}
 fontRenderer
+Fonts (%d), Textures (%d)
 ForbidCopyrightProtectedContents
 Forbidden rice_prefix_code
 Forgot to shutdown Renderer backend?
@@ -6117,9 +6037,10 @@ Found {} physical devices
 found existing device for session [%lX]
 Found XR_KHR_vulkan_enable2 extension
 Fp667JFixf0
-FragmentShadingRateAttachmentKHR
 Frame image #{}
+Frame requires too much memory for decoding
 frame_dump_render_on_collapse=%d
+FrameBufferScale: (%.2f,%.2f)
 Freeing device {}
 freeSystemMemory
 freeVideoMemory
@@ -6177,23 +6098,32 @@ FTC_SBitCache_Lookup
 FTC_SBitCache_LookupScaler
 FTC_SBitCache_New
 Function not patched! {}
-g.IO.ConfigErrorRecoveryEnableAssert || g.IO.ConfigErrorRecoveryEnableDebugLog || g.IO.ConfigErrorRecoveryEnableTooltip || g.ErrorCallback != NULL at C:/Projetos/Pink-shadPS4/externals/imgui/imgui.cpp:11777
+g.FrameCountEnded == g.FrameCount && "Forgot to call Render() or EndFrame() before UpdatePlatformWindows()?" at I:/EMULADORES/Playstation 4/shadPS4-src/externals/imgui/imgui.cpp:17725
+g.IO.BackendFlags & ImGuiBackendFlags_RendererHasTextures at I:/EMULADORES/Playstation 4/shadPS4-src/externals/imgui/imgui.cpp:9913
+g.IO.ConfigErrorRecoveryEnableAssert || g.IO.ConfigErrorRecoveryEnableDebugLog || g.IO.ConfigErrorRecoveryEnableTooltip || g.ErrorCallback != NULL at I:/EMULADORES/Playstation 4/shadPS4-src/externals/imgui/imgui.cpp:11777
 g_DisableAutoHideStartupImage
 g_JSWebAssemblyMemoryPoison
+g_list_copy
+g_slist_copy
+g_str_has_prefix
+g_str_has_suffix
 g58gPub0t60
 g7LNyphAmDQ
 gAmDIf0rNzw
 GameSir: Device detected - G7 Pro 8K mode (PID 0x%04X)
 GdgpUNXwRsE
 GEM Raster image
+General isRedZonePatchingEnabled: {}
 Geometry shader features unsupported, skipping
 Geometry shader stage unsupported, skipping
 GetComputePipeline
+GetDevice
 GetDeviceCaps
 GetDeviceCaps()
+GetDeviceID
+GetDirectMemoryType
 GetGraphicsPipeline
 getMemoryPoolStats
-GetParamsCached
 GetPatch
 GetPointerDeviceRects
 GetPresentParameters()
@@ -6219,7 +6149,6 @@ gfx:{}:DrawIndexIndirectMulti
 gfx:{}:DrawIndexOffset2
 gfx:{}:DrawIndirect
 gfx:{}:DrawIndirectMulti
-gfx_queue_max
 GfxAp9Xyiqs
 gfxH1hL4sxk
 gFXm4KsdCOg
@@ -6228,6 +6157,7 @@ GIP: Device reported too many events, %d > 5
 GIP: Reliable message transfer failed
 GL_ARB_debug_output
 GL_ARB_fragment_shader
+GL_ARB_framebuffer_sRGB
 GL_ARB_gpu_shader_int64
 GL_ARB_multitexture
 GL_ARB_separate_shader_objects
@@ -6238,6 +6168,7 @@ GL_ARB_vertex_shader
 GL_CreateTexture
 GL_DestroyRenderer
 GL_EXT_framebuffer_object
+GL_EXT_framebuffer_sRGB
 GL_EXT_samplerless_texture_functions
 GL_EXT_shader_16bit_storage
 GL_EXT_shader_explicit_arithmetic_types
@@ -6330,11 +6261,8 @@ glTexSubImage3D
 glTextureStorage2DEXT
 Got device "{}", "{}", "{}"
 Got render frame, remaining {}
-GPU checkpoints and the driver fault report are in the log file
-GPU checkpoints enabled: command ring and submit ledger, NV checkpoints {}
-GPU crashed or hung (VK_ERROR_DEVICE_LOST), detected in {}
-GPU diag capture
 GPU directMemoryAccess: {}
+GPU inlineFetchShader: {}
 GPU isNullGpu: {}
 GPU Memory Usage
 GPU readbackLinearImages: {}
@@ -6344,11 +6272,9 @@ GPU shouldDumpShaders: {}
 GPU Tools
 GPU Tools Options
 GPU vblankFrequency: {}
-gpu_checkpoints
 gpu_id
 GPU_Integrated: {}
 GPU_Model: {}
-gpu_overhead_cuts
 GPU_Vendor: {}
 GPU_Vulkan_Driver: {}
 GPU_Vulkan_Extensions: {}
@@ -6362,7 +6288,7 @@ gpuav_indirect_draws_buffers
 gpuav_indirect_trace_rays_buffers
 gPueTGt98vU
 GpuFjTMZsis
-gpuIH??
+gpuIH??P
 GpuRead
 GpuReadWrite
 GpuWrite
@@ -6371,38 +6297,38 @@ GPuymBQUb6s
 Graphics Pipeline {}
 Graphics PipelineLayout {}
 graphics_pipeline
+GraphicsPipeline
 graphicsPipelineCreateInfo
 guess_dc() is out of memory
 Guest decided to close device, might be an implementation issue
 Guest decided to reset device, might be an implementation issue
 H? BlitDstH?
 H? BlitSrcH?
-H? DeviceLH??Q
 H?_padebugH?
-H?Cached |H?T
+H?_patchesH??7
+H?_shadersH???
 H?ceMemoryH?H
-H?ctShaderH??
-H?Device aH?
+H?ctShaderH??U
+H?Default H3E?H?t DeviceH3M?H
+H?Default H3EPH?t DeviceH3MVH
+H?Device aI?
 H?eImage |H?L
-H?fixed5NV?#3
-H?fixed5NV?*3
-H?fixed5NV??9
+H?Fixed/UTH3
+H?fixed5NV??2
+H?fixed5NV?~9
 H?me-patchH?H
-H?ntShaderH??
 H?Patch saH???
-H?-patch.zH?
-H?-patch.zI?
 H?PATCH_MEH1??@
-H?PatchingH???
 H?s-patch.H??&)
+H?t DeviceH3M
 H?t DeviceH3N
 H?t DeviceH3P
 H?t DeviceH3Q
-H?teShaderH??
-H?tion_gpuH??f
-H?tPresent?I
+H?t_deviceH?X
+H?tion_gpuH???
+H?tPresent?E
 H?tPresentH?H
-H?W5RgPUuvH?E??E?v35Y?E?
+H1?H?D$(?fIXe???????~1A??E1?H?\$'
 HandleAsyncTransfer
 handling transfer %p completion with errcode %lu, length %lu
 Haptic device %u not found
@@ -6415,13 +6341,11 @@ Haptic: Effect not supported by haptic device.
 Haptic: Joystick isn't a haptic device.
 Haptic: Mouse isn't a haptic device.
 Haptic: Rumble effect not initialized on haptic device
-Harness patch applied: {} at {:#x}
-Harness perf: interval_ms={} game_frames={} presentations={} {}
-Harness progress: presentations={} game_frames={} vram_mb={} vram_budget_mb={} images={} largest_image_mb={}
 Hash/sign modifier requires an arithmetic presentation type
 Having image both as storage and render target is unsupported
 hb_ft_face_create_cached
 HblIt+4MbRs
+HCFailed to load image: {}
 HDMV Presentation Graphic Stream subtitles
 HDR (Radiance RGBE format) image
 Headphones rendering mode
@@ -6440,6 +6364,7 @@ HIDAPI_DriverPS3SonySixaxis_InitDevice(): Couldn't read feature report 0x00.
 HIDAPI_DriverPS3SonySixaxis_InitDevice(): Couldn't read feature report 0xf2. Trying again with 0x0.
 HIDAPI_DriverPS3SonySixaxis_UpdateDevice(): Couldn't read feature report 0x00
 HIDAPI_SetupDeviceDriver() couldn't open %s: %s
+HOST_CACHED
 HostCached
 HostUncached
 hotkey_renderdoc_capture
@@ -6450,8 +6375,139 @@ HttpCacheWrapperRevalidate
 HullShaderTransform
 HVKPCah7GPU
 -i,--ignore-game-patch
-I?ryShader??
+I:/EMULADORES/Playstation 4/shadPS4-src/externals/abseil-cpp\absl/debugging/symbolize_win32.inc
+I:/EMULADORES/Playstation 4/shadPS4-src/externals/protobuf/src/google/protobuf/io/zero_copy_stream.cc
+I:/EMULADORES/Playstation 4/shadPS4-src/externals/protobuf/src/google/protobuf/io/zero_copy_stream_impl.cc
+I:/EMULADORES/Playstation 4/shadPS4-src/externals/protobuf/src/google/protobuf/io/zero_copy_stream_impl_lite.cc
+I:/EMULADORES/Playstation 4/shadPS4-src/externals/tracy/public\tracy/TracyVulkan.hpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/common/memory_patcher.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/core/cpu_patches.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/core/debug_state.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/core/file_sys/devices/console_device.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/core/file_sys/devices/deci_tty_device.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/core/file_sys/devices/logger.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/core/file_sys/devices/random_device.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/core/file_sys/devices/rng_device.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/core/file_sys/devices/srandom_device.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/core/file_sys/devices/urandom_device.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/core/file_sys/devices/zero_device.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/core/libraries/network/net_resolver.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/core/libraries/save_data/save_memory.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/core/loader/symbols_resolver.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/core/memory.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/imgui/renderer/imgui_core.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/imgui/renderer/texture_manager.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/backend/spirv/emit_spirv.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/backend/spirv/emit_spirv_atomic.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/backend/spirv/emit_spirv_context_get_set.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/backend/spirv/emit_spirv_discard_frag.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/backend/spirv/emit_spirv_floating_point.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/backend/spirv/emit_spirv_image.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/backend/spirv/emit_spirv_integer.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/backend/spirv/emit_spirv_special.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/backend/spirv/emit_spirv_undefined.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/backend/spirv/emit_spirv_warp.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/backend/spirv/spirv_emit_context.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/frontend/control_flow_graph.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/frontend/copy_shader.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/frontend/decode.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/frontend/fetch_shader.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/frontend/format.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/frontend/instruction.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/frontend/structured_control_flow.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/frontend/translate/data_share.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/frontend/translate/export.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/frontend/translate/scalar_flow.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/frontend/translate/translate.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/frontend/translate/vector_alu.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/frontend/translate/vector_interpolation.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/frontend/translate/vector_memory.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/ir/abstract_syntax_list.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/ir/basic_block.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/ir/ir_emitter.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/ir/microinstruction.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/ir/passes/constant_propagation_pass.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/ir/passes/flatten_extended_userdata_pass.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/ir/passes/hull_shader_transform.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/ir/passes/inverse_ballot_elimination_pass.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/ir/passes/lower_buffer_format_to_raw.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/ir/passes/lower_hardware_intrinsics.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/ir/passes/lower_phis_to_regs_pass.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/ir/passes/lower_user_clip_planes.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/ir/passes/lower_wave64_pass.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/ir/passes/phi_simplification_pass.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/ir/passes/readlane_elimination_pass.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/ir/passes/resource_discover_pass.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/ir/passes/resource_patching_pass.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/ir/passes/ring_access_elimination.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/ir/passes/shader_info_collection_pass.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/ir/passes/shared_memory_barrier_pass.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/ir/passes/shared_memory_to_storage_pass.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/ir/passes/ssa_rewrite_pass.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/ir/value.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/shader_recompiler/recompiler.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/video_core/amdgpu/liverpool.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/video_core/amdgpu/pixel_format.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/video_core/amdgpu/tiling.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/video_core/buffer_cache/buffer.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/video_core/buffer_cache/buffer_cache.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/video_core/buffer_cache/fault_manager.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/video_core/cache_storage.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/video_core/renderdoc.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/video_core/renderer_vulkan/host_passes/fsr_pass.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/video_core/renderer_vulkan/host_passes/pp_pass.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/video_core/renderer_vulkan/liverpool_to_vk.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/video_core/renderer_vulkan/vk_compute_pipeline.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/video_core/renderer_vulkan/vk_graphics_pipeline.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/video_core/renderer_vulkan/vk_instance.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/video_core/renderer_vulkan/vk_pipeline_cache.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/video_core/renderer_vulkan/vk_pipeline_serialization.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/video_core/renderer_vulkan/vk_platform.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/video_core/renderer_vulkan/vk_presenter.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/video_core/renderer_vulkan/vk_rasterizer.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/video_core/renderer_vulkan/vk_resource_pool.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/video_core/renderer_vulkan/vk_runtime.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/video_core/renderer_vulkan/vk_scheduler.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/video_core/renderer_vulkan/vk_semaphore.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/video_core/renderer_vulkan/vk_shader_util.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/video_core/renderer_vulkan/vk_staging_buffer_pool.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/video_core/renderer_vulkan/vk_swapchain.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/video_core/texture_cache/blit_helper.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/video_core/texture_cache/image.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/video_core/texture_cache/image_info.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/video_core/texture_cache/image_view.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/video_core/texture_cache/sampler.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/video_core/texture_cache/texture_cache.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src/video_core/texture_cache/tile_manager.cpp
+I:/EMULADORES/Playstation 4/shadPS4-src/src\shader_recompiler/backend/spirv/spirv_emit_context.h
+I:/EMULADORES/Playstation 4/shadPS4-src/src\shader_recompiler/frontend/control_flow_graph.h
+I:/EMULADORES/Playstation 4/shadPS4-src/src\shader_recompiler/frontend/instruction.h
+I:/EMULADORES/Playstation 4/shadPS4-src/src\shader_recompiler/info.h
+I:/EMULADORES/Playstation 4/shadPS4-src/src\shader_recompiler/ir/attribute.h
+I:/EMULADORES/Playstation 4/shadPS4-src/src\shader_recompiler/ir/condition.h
+I:/EMULADORES/Playstation 4/shadPS4-src/src\shader_recompiler/ir/microinstruction.h
+I:/EMULADORES/Playstation 4/shadPS4-src/src\shader_recompiler/ir/operand_helper.h
+I:/EMULADORES/Playstation 4/shadPS4-src/src\shader_recompiler/ir/position.h
+I:/EMULADORES/Playstation 4/shadPS4-src/src\shader_recompiler/ir/reg.h
+I:/EMULADORES/Playstation 4/shadPS4-src/src\shader_recompiler/ir/reinterpret.h
+I:/EMULADORES/Playstation 4/shadPS4-src/src\shader_recompiler/ir/srt_gvn_table.h
+I:/EMULADORES/Playstation 4/shadPS4-src/src\shader_recompiler/ir/value.h
+I:/EMULADORES/Playstation 4/shadPS4-src/src\shader_recompiler/resource.h
+I:/EMULADORES/Playstation 4/shadPS4-src/src\video_core/amdgpu/liverpool.h
+I:/EMULADORES/Playstation 4/shadPS4-src/src\video_core/amdgpu/pixel_format.h
+I:/EMULADORES/Playstation 4/shadPS4-src/src\video_core/amdgpu/pm4_cmds.h
+I:/EMULADORES/Playstation 4/shadPS4-src/src\video_core/amdgpu/regs_depth.h
+I:/EMULADORES/Playstation 4/shadPS4-src/src\video_core/amdgpu/regs_shader.h
+I:/EMULADORES/Playstation 4/shadPS4-src/src\video_core/amdgpu/regs_vertex.h
+I:/EMULADORES/Playstation 4/shadPS4-src/src\video_core/amdgpu/resource.h
+I:/EMULADORES/Playstation 4/shadPS4-src/src\video_core/buffer_cache/buffer.h
+I:/EMULADORES/Playstation 4/shadPS4-src/src\video_core/renderer_vulkan/liverpool_to_vk.h
+I:/EMULADORES/Playstation 4/shadPS4-src/src\video_core/renderer_vulkan/vk_platform.h
+I:/EMULADORES/Playstation 4/shadPS4-src/src\video_core/texture_cache/tile.h
+I?-patch.zM?$>fA?D>
 I?t DeviceL3J
+I?W@I9GPu??
+I?W@I9GPu???t?L?E@I??E1?M??I??
 IAMF Mix Presentation
 iBGfXfHtWVA
 id={} resolveRetry={} resolveTimeout={} connTimeout={} sendTimeout={} recvTimeout={}
@@ -6521,6 +6577,7 @@ IDXGISwapChain4::SetMaximumFrameLatency
 IDXGISwapChain4::SetRotation
 If the patch was working on earlier versions, then it was using a format that shadPS4 handled incorrectly, and the patch should instead be fixed.
 IGameInput::RegisterDeviceCallback
+--ignore-game-patch
 ignoring access denied error while opening HID interface of composite device
 iGpuaBFQroQ
 il2cpp_assembly_get_image
@@ -6541,8 +6598,10 @@ image format {} type {} is not supported (flags {}, usage {})
 Image height exceeds user limit in IHDR
 Image height is zero in IHDR
 image is not MS but ms operand is provided
+Image is too high to process with png_read_png()
 Image not of any known type, or corrupt
 Image overlap resolve failed
+image row stride too large
 Image too large to decode
 Image too small, temporary buffers cannot function
 image view type {} is incompatible with image type {}
@@ -6584,7 +6643,6 @@ IMAGE_ATOMIC_SWAP
 IMAGE_ATOMIC_UMAX
 IMAGE_ATOMIC_UMIN
 IMAGE_ATOMIC_XOR
-image_downloads
 IMAGE_GATHER
 IMAGE_GATHER4
 IMAGE_GATHER4_B
@@ -6619,8 +6677,6 @@ IMAGE_LOAD_MIP_PCK
 IMAGE_LOAD_MIP_PCK_SGN
 IMAGE_LOAD_PCK
 IMAGE_LOAD_PCK_SGN
-image_memory_pool
-image_memory_pool: not pooled ({})
 IMAGE_OPTIMAL
 IMAGE_SAMPLE
 IMAGE_SAMPLE_B
@@ -6668,7 +6724,6 @@ IMAGE_STORE_MIP_PCK
 IMAGE_STORE_PCK
 IMAGE_UNKNOWN
 image2
-ImageArrayHandle
 ImageAtomicAnd32
 ImageAtomicCmpSwap32
 ImageAtomicDec32
@@ -6698,6 +6753,8 @@ ImageSampleExplicitLod
 ImageSampleImplicitLod
 ImageSampleRaw
 ImageSizeMacroTiled
+ImageType
+ImageView
 ImageView {}x{}x{} {:#x}:{:#x} {}:{} {}:{} ({})
 ImageWidth
 ImageWrite
@@ -6705,21 +6762,21 @@ ImeDialogState: option=0x{:X} (multiline={}, password={}, ext_kbd={}, fixed_pos=
 ImGui Render
 imgui_impl_sdlrenderer3
 imgui_impl_vulkan_shadps4
+ImGuiBackendFlags_RendererHasTextures is not set!
 IMMDevice CoCreateInstance(MMDeviceEnumerator)
 IMMDevice support requires Windows Vista or later
 IMMDevice: CoInitialize() failed
-ImRect(mon.MainPos, mon.MainPos + mon.MainSize).Contains(ImRect(mon.WorkPos, mon.WorkPos + mon.WorkSize)) && "Monitor work bounds not setup properly. If you don't have work area information, just copy MainPos/MainSize into them." at C:/Projetos/Pink-shadPS4/externals/imgui/imgui.cpp:11851
+ImRect(mon.MainPos, mon.MainPos + mon.MainSize).Contains(ImRect(mon.WorkPos, mon.WorkPos + mon.WorkSize)) && "Monitor work bounds not setup properly. If you don't have work area information, just copy MainPos/MainSize into them." at I:/EMULADORES/Playstation 4/shadPS4-src/externals/imgui/imgui.cpp:11851
 Incompatible shader format for Vulkan!
 IncompatibleShaderBinaryEXT
 inconsistent rendering intents
-incremental_bind verify: {} reusable slots checked, {} mismatches, {} T# raced with a GPU unmap
-incremental_bind verify: reused {} of shader {:#x} at {:#x} differs from the full bind
 Indexed surfaces must have a palette
 Infinity Backend Transfer command: {:x}
-info.device != VK_NULL_HANDLE at C:/Projetos/Pink-shadPS4/src/imgui/renderer/imgui_impl_vulkan.cpp:1240
-info.image_count >= 2 at C:/Projetos/Pink-shadPS4/src/imgui/renderer/imgui_impl_vulkan.cpp:1241
-info.instance != VK_NULL_HANDLE at C:/Projetos/Pink-shadPS4/src/imgui/renderer/imgui_impl_vulkan.cpp:1238
-info.physical_device != VK_NULL_HANDLE at C:/Projetos/Pink-shadPS4/src/imgui/renderer/imgui_impl_vulkan.cpp:1239
+info change after png_start_read_image or png_read_update_info
+info.device != VK_NULL_HANDLE at I:/EMULADORES/Playstation 4/shadPS4-src/src/imgui/renderer/imgui_impl_vulkan.cpp:1231
+info.image_count >= 2 at I:/EMULADORES/Playstation 4/shadPS4-src/src/imgui/renderer/imgui_impl_vulkan.cpp:1232
+info.instance != VK_NULL_HANDLE at I:/EMULADORES/Playstation 4/shadPS4-src/src/imgui/renderer/imgui_impl_vulkan.cpp:1229
+info.physical_device != VK_NULL_HANDLE at I:/EMULADORES/Playstation 4/shadPS4-src/src/imgui/renderer/imgui_impl_vulkan.cpp:1230
 init_device
 InitEventDispatcher
 Initialized OpenAL backend ({} Hz, {} ch, {} format, {}) for device '{}'
@@ -6740,13 +6797,17 @@ Insufficient memory for pCAL parameter
 Insufficient memory for pCAL params
 Insufficient memory for pCAL purpose
 Insufficient memory for pCAL units
+Insufficient memory to process iCCP chunk
+Insufficient memory to process iCCP profile
 Insufficient memory to process text chunk
 insufficient memory to read chunk
+Insufficient memory to store text
 Insufficient onion memory provided
 Insufficient work memory provided
 Integrated memory detected, allocating TransferBuffers on device-local memory!
 interface %d is not managed by WinUSB, cannot get maximum transfer size for RAW_IO
 interface %d with altsetting %d not found for device
+Interlace handling should be turned on when using png_read_image
 interpreting short transfer as error
 invalid after png_start_read_image or png_read_update_info
 Invalid audio device instance ID
@@ -6783,6 +6844,7 @@ Invalid memory
 Invalid memory address
 Invalid memory address!
 Invalid memory pointer
+invalid memory read
 invalid opmask with memory
 Invalid or corrupted deserialization container/shader cache
 Invalid physical device index {} provided when only {} devices exist
@@ -6810,9 +6872,11 @@ INVALID_MEMORY
 INVALID_PARAMETER render character does not belong to string
 INVALID_RENDERER
 INVALIDDEVICE
-io.BackendPlatformUserData == nullptr && "Already initialized a platform backend!" at C:/Projetos/Pink-shadPS4/src/imgui/renderer/imgui_impl_sdl3.cpp:529
-io.BackendRendererUserData == nullptr && "Already initialized a renderer backend!" at C:/Projetos/Pink-shadPS4/src/imgui/big_picture/imgui_impl_sdlrenderer3.cpp:48
-io.BackendRendererUserData == nullptr && "Already initialized a renderer backend!" at C:/Projetos/Pink-shadPS4/src/imgui/renderer/imgui_impl_vulkan.cpp:1245
+io.BackendFlags: RendererHasTextures
+io.BackendPlatformUserData == nullptr && "Already initialized a platform backend!" at I:/EMULADORES/Playstation 4/shadPS4-src/src/imgui/renderer/imgui_impl_sdl3.cpp:529
+io.BackendRendererUserData == nullptr && "Already initialized a renderer backend!" at I:/EMULADORES/Playstation 4/shadPS4-src/src/imgui/big_picture/imgui_impl_sdlrenderer3.cpp:47
+io.BackendRendererUserData == nullptr && "Already initialized a renderer backend!" at I:/EMULADORES/Playstation 4/shadPS4-src/src/imgui/renderer/imgui_impl_vulkan.cpp:1236
+io.ConfigDebugIniSettings
 ioctl: fd = {:X} cmd = {:X} file->type != Device
 iPcGPUsuc9U
 IsDebuggerPresent
@@ -6821,7 +6885,6 @@ isFixedPitch
 IsFixedV
 isoch packets for OUT transfer with WinUSB must be contiguous in memory
 ISpatialAudioObjectRenderStream::Reset failed: {:#x}
-IsPlausibleImage
 IsProcessorFeaturePresent
 IT_COPY_DATA
 IT_DISPATCH_DIRECT
@@ -6938,16 +7001,13 @@ JVM_TotalMemory
 knX2cGAmdW8
 KTkFIXpUuCg
 kyJAMd8GRHU
-L??L?t$x?E8A?GHH?t$P?E<A;GLu#?E@A;GPu
-L?w@L9gPu?M??t?1?
 L1YptcRdnA8
 L344hgfxmi4
 lamDP?
 large_image
-lds_barrier_uniform_readlane
-lds_barriers_large_groups
 lGpu??
 lhSZLgpu270
+Libraries::GnmDriver::WaitGpuIdle
 libSceAudioDeviceControl
 libSceAudioOutDeviceService
 libSceDataTransfer
@@ -6958,6 +7018,7 @@ libSceGnmGetGpuCoreClockFrequency
 libSceGpuException
 libSceHttpCache
 libSceImageUtil
+libSceNetDebug
 libScePrecompiledShaders
 libSceProfileCacheExternal
 libSceRazorCpu_debug
@@ -6972,47 +7033,60 @@ LIBUSB_ERROR_NO_DEVICE
 libusb_free_transfer
 libusb_get_device_descriptor
 libusb_get_device_list
+libusb_get_ss_usb_device_capability_descriptor
+libusb_get_ssplus_usb_device_capability_descriptor
 libusb_handle_events failed: %s, cancelling transfer and retrying
 libusb_reset_device
 libusb_submit_transfer
 LIBUSB_SUCCESS / LIBUSB_TRANSFER_COMPLETED
 LIBUSB_TRANSFER_CANCELLED
+LIBUSB_TRANSFER_ERROR
 LIBUSB_TRANSFER_NO_DEVICE
 LIBUSB_TRANSFER_OVERFLOW
 LIBUSB_TRANSFER_STALL
 LIBUSB_TRANSFER_TIMED_OUT
 libusb_unref_device
+libusb_wrap_sys_device
 libusbK DLL does not support isoch transfers
+Limiting {} MB binding at {:#x} of shader {:#x} to {} MB
 Linker: Stub resolved {} as {} (lib: {}, mod: {})
 Load cert from memory
 Load file into cache
 Loaded patch for {} shader {:#x}
+Loaded patch for cached {} shader {:#x}
 LoadModuleToMemory
 LoadPipelineStage
 LoadSdlTextureData
+LogCachedStyleOnce
 LogRenderResultSample
 lW8taMdqx2I
 M!M#M%M'M*M,M.M0M1M4M6M8M<M=M>M?MBMDMHMKMNMPMSMUMWMYMZM^M`MaMdMhMjMlMnMoMpMsMuMwMyM{M}M
 M!M#M%M'M*M1M4M8M<M?MDMHMKMSMWMZM^MaMdMjMlMpMwMyM?M?M?M?M?M?M?M?M?M?M?M?M?M?M?M?M?M?N
 M!M'M*M1M4M8M<M?MDMHMNMPMSMWMZM^MaMdMjMlMpMuMwMyM?M?M?M?M?M?M?M?M?M?M?M?M?M?M?M?M?M?N
-M?G@I9GPu??
-M?G@I9GPu???t?I??M??E1?L??H??
 mainOutputDevice
 malloc_check_memory_bounds
 malloc_report_memory_blocks
+manual_gamepads_array != nullptr && manual_gamepads_count > 0 at I:/EMULADORES/Playstation 4/shadPS4-src/src/imgui/renderer/imgui_impl_sdl3.cpp:704
+manual_gamepads_array == nullptr && manual_gamepads_count <= 0 at I:/EMULADORES/Playstation 4/shadPS4-src/src/imgui/renderer/imgui_impl_sdl3.cpp:708
+MapMemory
 Matching2 signaling: unresolved endpoint room={} member={}
 Matching2:Dispatch
 max memory used for buffering real-time frames
 max memory used for timestamp index (per stream)
 maximum transfer size for endpoint 0x%02X is %lu
+maxMemoryAllocationCount
 mBTFixSxTzQ
 mcYVamD0JVM
+memory
 Memory >
 Memory allocation failed while processing sCAL
+Memory allocation failure
+Memory allocations
 memory buffer
 Memory buffer is full
 memory buffer routines
 Memory doesn't contain a valid png file
+memory image too large
 memory management control operations (H.264)
 Memory map
 memory size ......: {}
@@ -7020,14 +7094,20 @@ Memory type
 Memory type {:#x} is invalid!
 memory.dat
 memory_view_table
+memoryHeapCount
+MemoryInfo
 MemoryManager
+MemoryPools
 memorySize={} threadPriority={} cpuAffinityMask={} threadStackSize={}
+memoryTypeCount
 MFCreateDeviceSource
 MFCreateDeviceSource failed
 MFEnumDeviceSources
+micDevice
 Microsoft (R) HLSL Shader Compiler 10.1
 mini_get_debug_options
 mini_set_debug_options
+Miniupnpc Memory allocation error
 Missing attributes for loopback device
 missing idat box required by the image grid
 missing idat box required by the image overlay
@@ -7040,7 +7120,6 @@ mmSPI_SHADER_LATE_ALLOC_VS__CI__VI
 mmSPI_SHADER_PGM_HI_PS
 mmSPI_SHADER_PGM_HI_VS
 mmSPI_SHADER_PGM_LO_PS
-mmSPI_SHADER_PGM_LO_VS
 mmSPI_SHADER_PGM_RSRC1_PS
 mmSPI_SHADER_PGM_RSRC1_VS
 mmSPI_SHADER_PGM_RSRC2_PS
@@ -7267,13 +7346,15 @@ No audio devices found, using default
 No available audio device
 No available video device
 No camera devices connected
+no color-map for color-mapped image
 No default audio device available
-no device
 no DeviceInterfaceGUID registered for '%s'
 No extensions supported by device.
 No hardware accelerated renderers available
 No JPEG data found in image
+No memory for the SRT clean page bitmap
 No physical devices found
+no rows for png_write_image to write
 No shader body src
 no space in chunk cache
 No space in chunk cache for sPLT
@@ -7285,32 +7366,33 @@ No supported SDL_GPU backend found!
 No viable physical devices found
 No video device found
 No Vulkan loader has been loaded
+No Vulkan physical devices
 No window texture data
 Non MS Image to MS Image {}
 Non-power-of-two textures are not supported
 Nonzero DM metadata compression method but no DM metadata present
-not dumped (enable GPU.dump_shaders to keep shader binaries)
 Not enough image data
 Not enough pooled memory to perform mapping
+not present
 Not Resolved {}
 Not yet implemented in FFmpeg, patches welcome
 NOT_BOUND_RENDERER
+Note: some memory buffers have been compacted/freed.
 npdebug
 NtDeviceIoControlFile
-Null GPU is enabled
 Null pointer in shader registers.
 Null surface in frame %i
 NULL surface in frame 0
 null_gpu
+nullGpu
 num_storage_texture_bindings
 o4?gPU?xG?
 offsets array for geometry shaders is too short
 OK##validationdialog
-old_tex->Status == ImTextureStatus_OK || old_tex->Status == ImTextureStatus_WantCreate || old_tex->Status == ImTextureStatus_WantUpdates at C:/Projetos/Pink-shadPS4/externals/imgui/imgui_draw.cpp:4129
+old_tex->Status == ImTextureStatus_OK || old_tex->Status == ImTextureStatus_WantCreate || old_tex->Status == ImTextureStatus_WantUpdates at I:/EMULADORES/Playstation 4/shadPS4-src/externals/imgui/imgui_draw.cpp:4129
 OnDefaultDeviceChanged({}, {}, {})
 OnDeviceAdded({})
 OnDeviceRemoved({})
-OnDeviceStateChanged({}, {:#x})
 Opaque presentation unsupported! Expect weird transparency bugs!
 OpenAL device '{}' does not support ALC_SOFT_HRTF
 OpenAL device '{}' unavailable for spatial output, using AudioOut path
@@ -7318,6 +7400,7 @@ OpenAL device initialized: '{}'
 openal_main_output_device
 openal_mic_device
 openal_padSpk_output_device
+OpenDevice
 Opened a TV remote device, out handle: {}
 Opened audio device: {} ({} Hz, {} ch, gain: {:.3f})
 OpenEXR image
@@ -7331,25 +7414,28 @@ Opening default capture device
 Opening default playback device
 Opening playback device "{}"
 ORBIS_NP_WEBAPI_HTTP_METHOD_PATCH
+OrbShdr??(?U?(???(???(?l?(?Waiting for debugger to attach...
 oUjgPUMQcao
 Out of BAR memory, allocating uniform buffers on host-local memory, expect degraded performance!
 Out of bounds indirect SGPR copy
 Out of device-local memory, allocating buffers on host-local memory, expect degraded performance!
 Out of device-local memory, allocating textures on host-local memory!
 Out of flexible memory, available flexible memory = {:#x} requested size = {:#x}
-Out of memory
+Out of Memory
 Out of memory - aborting
 out of memory, unable to read INFO tag
 Out of memory: need {} but only {} available
 Out of X-RAM memory (avail: {}, needed: {})
 Out of X-RAM memory (need: {}, avail: {})
-out_n < IM_ARRAYSIZE(out_buf) at C:/Projetos/Pink-shadPS4/src\core/devtools/widget/imgui_memory_editor.h:772
+out_n < IM_ARRAYSIZE(out_buf) at I:/EMULADORES/Playstation 4/shadPS4-src/src\core/devtools/widget/imgui_memory_editor.h:772
 OUTOFVIDEOMEMORY
 OutputDebugStringA
 OutputDebugStringW
 OutputTexture
+OutputToDebugger
 Overriding renderer string: "{}"
-pack_id != ImFontAtlasRectId_Invalid && "Out of texture memory." at C:/Projetos/Pink-shadPS4/externals/imgui/imgui_draw.cpp:4835
+-p,--patch
+pack_id != ImFontAtlasRectId_Invalid && "Out of texture memory." at I:/EMULADORES/Playstation 4/shadPS4-src/externals/imgui/imgui_draw.cpp:4835
 padSpkOutputDevice
 Palette doesn't match surface format
 Palette is NULL in indexed image
@@ -7359,18 +7445,24 @@ pamdie
 Parametric Stereo signaled to be not-present but was found in the bitstream.
 parent for device '%s' is not a hub
 ParseCopyShader
-ParseFetchShader
+-patch
 --patch
 Patch {}
 patch addr non imm, inst {}
 patch construction failed
 Patch file to apply
+Patch saved to 
 Patch trampoline space exhausted for module at {}
+-patch.zar
 patch_in{}
+PATCH_MEMORY
 patch_out{}
+patch_sh
 patch_shaders
 Patched instruction '{}' at: {}
+Patched SRT walker at {}, fault address {}
 PATCHED_FLIP
+patches
 PatchesIllegalInstructionHandler
 PatchFlipRequest
 PatchGlobalDataShareAccess
@@ -7379,6 +7471,8 @@ Patching immediate form EXTRQ, length: {}, index: {}
 PatchMemory
 PatchPrimitive
 patchSha
+patchShaders
+PatchShortSse4aInstructions
 PatchVertices
 PATCHWELCOME
 pattern encryption is not present in 'cbcs' scheme
@@ -7388,9 +7482,6 @@ PBM (Portable BitMap) image
 PC Paintbrush PCX image
 pe: image/jpeg
 peer '{}' endpoint unresolved; connection {} 30s timeout
-Perf stats: no timestamp query pool ({}), gpu_ms stays 0
-Per-game workaround overlay applied: {}
-periodic_flush_commands without readback_ahead: one device loss (WriteInvalid) was seen in this combination
 Permission is hereby granted, free of charge, to??%y pers?0/obtaining a copya?
 pfbgfx???z????????
 PFM (Portable FloatMap) image
@@ -7402,45 +7493,73 @@ Physical device subgroup size {}
 physicalDevice
 Pipeline cache isn't compatible with current system. Ignoring the cache
 Pipeline cache profile has unexpected size ({} != {}). Ignoring the cache
-pipeline_binds
-pipeline_binds_same
-pipeline_binds_skipped
 pipeline_cache_archived
 pipeline_cache_enabled
-pipeline_create_ms
-pipeline_creates
 PipelineBinaryMissingKHR
+PipelineCache
 pipelineCacheArchive
 pipelineCacheEnable
 PipelineCompileRequired
 PipelineStatStart
 PipelineStatStop
-PlatformUserData == NULL && RendererUserData == NULL at C:/Projetos/Pink-shadPS4/externals/imgui\imgui.h:4209
+PlatformUserData == NULL && RendererUserData == NULL at I:/EMULADORES/Playstation 4/shadPS4-src/externals/imgui\imgui.h:4209
 PNG (Portable Network Graphics) image
 png_get_image_height
 png_get_image_width
+png_image_begin_read_from_file: incorrect PNG_IMAGE_VERSION
+png_image_begin_read_from_file: invalid argument
+png_image_begin_read_from_memory: incorrect PNG_IMAGE_VERSION
+png_image_begin_read_from_memory: invalid argument
+png_image_begin_read_from_stdio: incorrect PNG_IMAGE_VERSION
+png_image_begin_read_from_stdio: invalid argument
+png_image_finish_read: damaged PNG_IMAGE_VERSION
+png_image_finish_read: image too large
+png_image_finish_read: invalid argument
+png_image_finish_read: row_stride too large
+png_image_finish_read[color-map]: no color-map
+png_image_read: alpha channel lost
+png_image_read: opaque pointer not NULL
+png_image_read: out of memory
+png_image_write_: out of memory
+png_image_write_to_file: incorrect PNG_IMAGE_VERSION
+png_image_write_to_file: invalid argument
+png_image_write_to_memory: incorrect PNG_IMAGE_VERSION
+png_image_write_to_memory: invalid argument
+png_image_write_to_memory: PNG too big
+png_image_write_to_stdio: incorrect PNG_IMAGE_VERSION
+png_image_write_to_stdio: invalid argument
 png_read_image
+png_read_image: invalid transformations
+png_read_image: unsupported transformation
 png_read_update_info/png_start_read_image: duplicate call
 png_set_chunk_cache_max
 png_start_read_image
+png_start_read_image/png_read_update_info: duplicate call
 png_write_image
+png_write_image: internal call error
+png_write_image: unsupported transformation
 Po-3sCgpU9c
-pooled_images
 PPM (Portable PixelMap) image
 Precision specification invalid for chrono::duration type with integral representation type, see N4950 [time.format]/1.
-Preloaded {} pipelines
+Prefix
+Preloaded {} pipelines in {} ms
 pRenderer
 PrepareRenderState
+pre-res-patch.
+Present
 Present 
 Present failed, device lost
+Present Mode
 Present mode not supported!
 Present()
+present_
 present_mode
 Presentation not supported on this platform
 presentationAddress
 presentationURL
 Presenter time: %.3f ms (%.1f FPS)
 presentM
+presentMode
 print specific debug info
 probe memory: mem_kind=0x{:04x} attr_bits=0x{:04x} region_size=0x{:x} base={} mspace={} iface={}
 program assertion failed - device address overflow
@@ -7448,8 +7567,7 @@ program assertion failed - max USB interfaces reached for HID device
 program assertion failed - no function to copy transfer data
 program assertion failed - transfer HANDLE is not NULL
 program assertion failed - transfer HANDLE is NULL after transfer was submitted
-protect_gpu
-protect_gpu_ms
+Protobuf debug counters:
 psl_is_public_suffix
 psl_is_public_suffix2
 psl_suffix_count
@@ -7475,23 +7593,15 @@ QOI (Quite OK Image)
 r`namd
 R+AMdZg0mkU
 R16G16Sfixed5NV
-RayTracingShaderKHR
 razS4tGpuuw
 Rb0+LGpUObM
 RBUWUb2gfXI
 Readback
-Readback ahead verify: {} ahead copies checked, {} mismatches
-Readback ahead verify: mismatch at {:#x} ({:#x} bytes), tick {}
-readback_ahead_transfer_queue
-readback_ahead_transfer_queue without readback_ahead: there are no ahead copies to move, so the key has no effect
-readback_ahead_transfer_queue: the device has no transfer-only queue family, so the key has no effect
-readback_kb
 readback_linear_images_enabled
-readback_ms
-readback-ahead fence
 readbackLinearImages
-readbacks
+Readbacks Mode
 readbacks_mode
+readbacksMode
 ReadConst base high not from constant memory
 ReadConst base low not from constant memory
 Received a packet for an attachment stream.
@@ -7501,6 +7611,7 @@ redirect: depth={} cached 301 {}://{}:{}{} -> {}://{}:{}{}
 redirected to sceNetResolverStartNtoa
 Redirecting to sceSaveDataGetSaveDataMemory2
 Redirecting to sceSaveDataSetSaveDataMemory2
+redzone_patches
 RegisterDeviceNotificationW
 RegisterImage
 RegisterMemory
@@ -7510,7 +7621,7 @@ Removed transfer %p from the in-flight list because device handle %p closed
 Removing device "{}", "{}", "{}"
 Removing effect from the device
 Removing HIDAPI device '%s' VID 0x%.4x, PID 0x%.4x, bluetooth %d, version %d, serial %s, interface %d, interface_class %d, interface_subclass %d, interface_protocol %d, usage page 0x%.4x, usage 0x%.4x, path = %s, driver = %s (%s)
-RENDER
+render
 Render target texture is NULL
 Render targets not supported by OpenGL
 render_pass
@@ -7518,28 +7629,25 @@ Render_Recompiler
 Render_Vulkan
 RenderBaseline: handle={} code=U+{:04X} y_in={} baseline_add={} y_used={} pre_rc={}
 RenderCharGlyphImageCore
-RenderDoc capture ended (ok={}, captures={})
 RenderDoc capture path: {}
-RenderDoc capture written: {}
-RenderDoc scheduled capture triggered at {:.1f}s
 renderdoc.dll
 renderdoc_enabled
 RENDERDOC_GetAPI
-renderer != nullptr && "SDL_Renderer not initialized!" at C:/Projetos/Pink-shadPS4/src/imgui/big_picture/imgui_impl_sdlrenderer3.cpp:49
+renderer
+renderer != nullptr && "SDL_Renderer not initialized!" at I:/EMULADORES/Playstation 4/shadPS4-src/src/imgui/big_picture/imgui_impl_sdlrenderer3.cpp:48
 Renderer already associated with window
 Renderer couldn't recover from device lost: %s
 Renderer does not support RenderCopyEx
 Renderer info
 Renderer isn't a GPU renderer
 Renderer isn't associated with a GPU device
-RendererHasTextures == false && "Not supported for dynamic atlases, but you may call Clear()." at C:/Projetos/Pink-shadPS4/externals/imgui/imgui_draw.cpp:2756
+RendererHasTextures == false && "Not supported for dynamic atlases, but you may call Clear()." at I:/EMULADORES/Playstation 4/shadPS4-src/externals/imgui/imgui_draw.cpp:2756
 renderer-override
 Renderer's window has been destroyed, can't use further
 RenderSample: handle={} code=U+{:04X} update=[{},{} {}x{}] img=[bx={} by={} adv={} stride={} w={} h={}] metrics=[w={} h={} hbx={} hby={} hadv={}]
 renderSurface
 RenderSurfaceInit: done
 RenderSurfaceInit: writing struct
-RenderTarget0
 RenderTarget1
 RenderTarget2
 RenderTarget3
@@ -7551,22 +7659,26 @@ RenderTargetIndex
 Renderware TXD (TeXture Dictionary) image
 Reopened device {}, "{}"
 ReportDeviceFault
-ReportGpuCheckpoints
 req_comp must be 1 if loading paletted image without expansion
 reqId={} dispatched to async worker [{} {} {}://{}:{}{}]
+Requested prefix size 
 Requested present mode {} is not supported, falling back to {}.
+Requested suffix size 
 Required Vulkan device extension '%s' not supported
 Required Vulkan extension unavailable: {}
 Required Vulkan feature unavailable: nullDescriptor
 Required Vulkan feature unavailable: robustBufferAccess2
 Required Vulkan feature unavailable: robustImageAccess2
 Required Vulkan instance extension '%s' not supported
+reset_device
+ResetDevice
 ResetDevice failed: %s
 Resetting device
 Resolve
 Resolve:MRT0={:#x}:MRT1={:#x}
 resolved address for {}: {}
 ResolveFace
+ResolveFaceAndScale
 ResolveGameFilePath
 ResolveHostname
 ResolveOnlineId
@@ -7579,7 +7691,6 @@ ResolveSystemFontPath
 resolveTimeout < 1'000'000
 ResolveTus
 Reusing OpenAL device '{}', port count: {}
-rgtMCOpy
 rgtMCOpyBSc
 room={} not cached for connection info
 Row has too many bytes to allocate in memory
@@ -7616,9 +7727,11 @@ s+VGAMDQ0AQ
 S0nGlgFXmuA
 SamplePipelineStat
 SanitizeCopyLayers
+Save to memory
 SBR signaled to be not-present but was found in the bitstream.
+Scalable Texture Profile
 ScalarMemory
-ScanShaderBinaryIndices
+sce_sdmemory
 sceAgcAcbCopyData
 sceAgcAcbCopyDataGetSize
 sceAgcAcbDispatchIndirect
@@ -8548,6 +8661,7 @@ sceNetResolverDestroy
 sceNetResolverGetError
 sceNetResolverStartAton
 sceNetResolverStartAton6
+sceNetResolverStartNtoa
 sceNetResolverStartNtoa6
 sceNetResolverStartNtoaMultipleRecords
 sceNetResolverStartNtoaMultipleRecordsEx
@@ -8684,8 +8798,10 @@ sceSaveDataDebugProspero
 sceSaveDataDebugRemoveSaveDataRoot
 sceSaveDataDebugTarget
 sceSaveDataGetSaveDataMemory
+sceSaveDataGetSaveDataMemory2
 sceSaveDataRestoreLoadSaveDataMemory
 sceSaveDataSetSaveDataMemory
+sceSaveDataSetSaveDataMemory2
 sceSaveDataSetupSaveDataMemory
 sceSaveDataSetupSaveDataMemory2
 sceSaveDataSyncSaveDataMemory
@@ -9053,7 +9169,6 @@ SDL.gpu.device.create.xr.extensions.count
 SDL.gpu.device.create.xr.extensions.names
 SDL.gpu.device.create.xr.form_factor
 SDL.gpu.device.create.xr.instance_out
-SDL.gpu.device.create.xr.layers.count
 SDL.gpu.device.create.xr.layers.names
 SDL.gpu.device.create.xr.system_id_out
 SDL.gpu.device.create.xr.version
@@ -9127,7 +9242,6 @@ SDL.surface.hotspot.x
 SDL.surface.hotspot.y
 SDL.surface.rotation
 SDL.surface.SDR_white_point
-SDL.surface.tonemap
 SDL.texture.access
 SDL.texture.colorspace
 SDL.texture.create.access
@@ -9205,7 +9319,9 @@ SDL_BindGPUVertexBuffers_REAL
 SDL_BindGPUVertexSamplers_REAL
 SDL_BindGPUVertexStorageBuffers_REAL
 SDL_BindGPUVertexStorageTextures_REAL
+SDL_BlendFillRect(): Unsupported surface format
 SDL_BlendFillRects(): Unsupported surface format
+SDL_BlendLine(): Unsupported surface format
 SDL_BlendLines(): Passed NULL destination surface
 SDL_BlendLines(): Unsupported surface format
 SDL_BlendPoint(): Unsupported surface format
@@ -9230,6 +9346,7 @@ SDL_DrawGPUIndexedPrimitives_REAL
 SDL_DrawGPUIndexedPrimitivesIndirect_REAL
 SDL_DrawGPUPrimitives_REAL
 SDL_DrawGPUPrimitivesIndirect_REAL
+SDL_DrawLine(): Unsupported surface format
 SDL_DrawLines(): Unsupported surface format
 SDL_DrawPoint(): Unsupported surface format
 SDL_DrawPoints(): Unsupported surface format
@@ -9304,11 +9421,9 @@ SDL_RENDER_DIRECT3D11_WARP
 SDL_RENDER_DRIVER
 SDL_render_gl.c
 SDL_render_gles2.c
-SDL_RENDER_GPU_DEBUG
 SDL_RENDER_GPU_LOW_POWER
 SDL_RENDER_LINE_METHOD
 SDL_RENDER_OPENGL_NV12_RG_SHADER
-SDL_RENDER_OPENGLES2_TEXCOORD_PRECISION
 SDL_render_sw.c
 SDL_RENDER_VSYNC
 SDL_RENDER_VULKAN_DEBUG
@@ -9328,8 +9443,10 @@ SDL_SubmitGPUCommandBufferAndAcquireFence_REAL
 SDL_SURFACE_MALLOC
 SDL_sysgpu.h
 SDL_Texture
+sdl_texture != nullptr && "Backend failed to create texture!" at I:/EMULADORES/Playstation 4/shadPS4-src/src/imgui/big_picture/imgui_impl_sdlrenderer3.cpp:247
 SDL_UploadToGPUBuffer_REAL
 SDL_UploadToGPUTexture_REAL
+SDL_VULKAN_DISPLAY
 SDL_Vulkan_GetInstanceExtensions(): getExtensionCount: %s
 SDL_Vulkan_GetVkGetInstanceProcAddr(): %s
 SDL_VULKAN_LIBRARY
@@ -9347,10 +9464,13 @@ segment_memory_size ...: {:#018x}
 SEI_PREFIX
 SEI_SUFFIX
 SelectAudioDevice
+Selective red-zone protection for {}: {} functions, {}/{} memory instructions patched
+SeLockMemoryPrivilege
 SendEffect failed, device disconnected
 set {} id={} resolve_retry={}
 set {} id={} resolve_timeout_us={}
 Set io.ConfigDebugHighlightIdConflicts=false to disable this warning in non-programmers builds.
+SetDirectMemoryType
 SetLED failed, device disconnected
 SetPatch
 SetRenderTarget()
@@ -9382,13 +9502,11 @@ SetupDiOpenDeviceInterfaceRegKeyW
 SetupImages
 SetupMemoryRegions
 SGI image
+shader
 Shader %s
 Shader {:#x} uses dynamic ReadConst
 Shader {:#x} uses immediate ReadConst
-Shader binary info not found at {}, skipping the command
 Shader binary info not found.
-Shader cache: {} programs with stored permutations
-Shader cache: new permutation of {:#x} stored at index {} instead of {} (already used in the store)
 Shader isa disassembler: 
 Shader list
 Shader name
@@ -9399,28 +9517,21 @@ Shader SPIRV disassembler:
 Shader translation has failed
 Shader type
 Shader: 
-shader_code_clean_reads
+shader_c
 shader_collect
-shader_compile_ms
-shader_compiles
 shadPS4 Vulkan
 shadPS4:GpuCommandProcessor
-shadPS4:GpuRecorder
 shadPS4:GpuSchedPriorityPendingOpsRunner
 shadPS4:ImGuiTextureManager
 shadPS4:PipelineCacheIO
 shadPS4:PresentThread
-SHADPS4_GPU_DIAG
-SHADPS4_GPU_SYNC_AFTER_SEC
-SHADPS4_GPU_SYNC_EVERY
-SHADPS4_READBACK_AHEAD_VERIFY
 shadps4_tmp_shader.bin
-SHADPS4_TSHARP_CACHE_VERIFY
 shared_memory_area_alias
 shared_memory_area_create
 shared_memory_area_map
-SharedMemoryBarrierPass
 SharedMemoryToStoragePass
+Show "Debug Break" buttons in other sections (io.ConfigDebugIsDebuggerPresent)
+Show Debug Log
 Show GPU memory usage
 Show loaded shaders
 show_advanced_debug=%d
@@ -9436,8 +9547,8 @@ SInput device SDL Features GET command could not write
 size of valid pixels in output image meant for presentation
 Skipped PREFIX SEI %d
 Skipped SUFFIX SEI %d
-skipped: no pipeline
 skipping APPx (len=%d) for bayer-encoded image
+Skipping draw: shader {:#x} (sw stage {}, hw stage {}, info {}) has no user data bound
 Skipping user clip plane lowering: shader {:#x} exports its own clip distances
 slice below image (%d >= %d)
 Slice extension for a depth view or a 3D-AVC texture view
@@ -9446,6 +9557,8 @@ Software renderer doesn't have an output surface
 someone else is closing a device
 someone is closing a device
 sos_memory
+SOTC_LDS_BARRIERS
+sotc-windows-fixes
 SoWHuVW0gpU
 Spatial output initialized on OpenAL device '{}' (granularity {}, ring {})
 specified texture is not a render target
@@ -9460,17 +9573,14 @@ SPV_KHR_shader_clock
 SPV_KHR_shader_draw_parameters
 SPV_KHR_workgroup_memory_explicit_layout
 sqlite3_db_release_memory
-SRT walker code buffer full ({} of {} bytes used, {} bytes shared): a {}-byte walker was dropped, affected shaders read zeros from their SRT
-SRT walker for shader {:#x} does not fit: {}
-srt_walker_clean_reads: no memory for the clean-page bitmap, walker loads fault as without the key
 SSL_getSessionCache
 SSL_lockSessionCacheMutex
 start_time - empty_duration is not representable
 Static surface pool size exceeded.
 StaticPatching
-Status == ImTextureStatus_Destroyed at C:/Projetos/Pink-shadPS4/externals/imgui/imgui_draw.cpp:2510
-stb__dout + length <= stb__barrier_out_e at C:/Projetos/Pink-shadPS4/externals/imgui/imgui_draw.cpp:6294
-stb__dout + length <= stb__barrier_out_e at C:/Projetos/Pink-shadPS4/externals/imgui/imgui_draw.cpp:6302
+Status == ImTextureStatus_Destroyed at I:/EMULADORES/Playstation 4/shadPS4-src/externals/imgui/imgui_draw.cpp:2510
+stb__dout + length <= stb__barrier_out_e at I:/EMULADORES/Playstation 4/shadPS4-src/externals/imgui/imgui_draw.cpp:6294
+stb__dout + length <= stb__barrier_out_e at I:/EMULADORES/Playstation 4/shadPS4-src/externals/imgui/imgui_draw.cpp:6302
 SteamDeck
 STENCIL_COPY
 Stereo device: using PS4-accurate {}ch->stereo downmix
@@ -9479,15 +9589,20 @@ sTexture
 Still Texture Object start
 still_image
 Stopping the device
+storage_texture_bindings
 storage_textures
 Stream #%d is already bound to a device
+SubgroupBarrier
+submit_bulk_transfer
+submit_iso_transfer
+SubmitTransfer
 Sun Rasterfile image
+surface
 Surface already associated with window
 Surface doesn't have a colorkey
 Surface format data_format={}, number_format={} is not fully supported (vk_format={}, missing features={})
 SurfaceFormat
 Surfaces must not be locked during blit
-SurfaceSync
 Swapchain acquire returned unknown result {}
 Swapchain composition not supported!
 Swapchain Image {}
@@ -9504,30 +9619,33 @@ syncval_submit_time_validation
 SysfontRender: handle={} code=U+{:04X} mapped=U+{:04X} font_id={} scale_unit={} dpi_x={} dpi_y={} scale_w={} scale_h={} sys_scale_factor={} shift_y_units={}
 System audio playback device
 System audio recording device
-T# (tsharp_cache)
-table->MemoryCompacted == false at C:/Projetos/Pink-shadPS4/externals/imgui/imgui_tables.cpp:4288
+T_layer_settingsVK_EXT_layer_setFailed to initialize Win32 surface
+table->MemoryCompacted == false at I:/EMULADORES/Playstation 4/shadPS4-src/externals/imgui/imgui_tables.cpp:4288
+tableLog requires too much memory : unsupported
 tamdhi{?}???
 tamdhij?U?Z?
 TEEC_ReleaseSharedMemory
 tEshvgFXF68
 Tessellation partitioning Pow2 has no Vulkan equivalent, falling back to SpacingEqual
-TessellationControlShader
-TessellationEvaluationShader
-tex_id != ImTextureID_Invalid && "ImDrawCmd is referring to ImTextureData that wasn't uploaded to graphics system. Backend must call ImTextureData::SetTexID() after handling ImTextureStatus_WantCreate request!" at C:/Projetos/Pink-shadPS4/externals/imgui\imgui.h:4142
-tex_ref._TexData->Status != ImTextureStatus_WantDestroy && tex_ref._TexData->Status != ImTextureStatus_Destroyed at C:/Projetos/Pink-shadPS4/externals/imgui/imgui_draw.cpp:708
-tex->QueueUserData == NULL && "Texture queue set Status to Destroyed but did not clear QueueUserData!" at C:/Projetos/Pink-shadPS4/externals/imgui/imgui_draw.cpp:2888
-tex->Status != ImTextureStatus_WantDestroy && tex->Status != ImTextureStatus_Destroyed at C:/Projetos/Pink-shadPS4/externals/imgui/imgui_draw.cpp:3023
-tex->Status == ImTextureStatus_OK || tex->Status == ImTextureStatus_WantCreate || tex->Status == ImTextureStatus_WantUpdates at C:/Projetos/Pink-shadPS4/externals/imgui/imgui_draw.cpp:2874
-tex->TexID == ImTextureID_Invalid && tex->BackendUserData == NULL && "Backend set texture Status to Destroyed but did not clear TexID/BackendUserData!" at C:/Projetos/Pink-shadPS4/externals/imgui/imgui_draw.cpp:2887
-tex->TexID == ImTextureID_Invalid && tex->BackendUserData == NULL && "Backend set texture's TexID/BackendUserData but did not update Status to OK." at C:/Projetos/Pink-shadPS4/externals/imgui/imgui_draw.cpp:2805
+tex_id != ImTextureID_Invalid && "ImDrawCmd is referring to ImTextureData that wasn't uploaded to graphics system. Backend must call ImTextureData::SetTexID() after handling ImTextureStatus_WantCreate request!" at I:/EMULADORES/Playstation 4/shadPS4-src/externals/imgui\imgui.h:4142
+tex_ref._TexData->Status != ImTextureStatus_WantDestroy && tex_ref._TexData->Status != ImTextureStatus_Destroyed at I:/EMULADORES/Playstation 4/shadPS4-src/externals/imgui/imgui_draw.cpp:708
+tex->Format == ImTextureFormat_RGBA32 at I:/EMULADORES/Playstation 4/shadPS4-src/src/imgui/big_picture/imgui_impl_sdlrenderer3.cpp:241
+tex->Format == ImTextureFormat_RGBA32 at I:/EMULADORES/Playstation 4/shadPS4-src/src/imgui/renderer/imgui_impl_vulkan.cpp:745
+tex->QueueUserData == NULL && "Texture queue set Status to Destroyed but did not clear QueueUserData!" at I:/EMULADORES/Playstation 4/shadPS4-src/externals/imgui/imgui_draw.cpp:2888
+tex->Status != ImTextureStatus_WantDestroy && tex->Status != ImTextureStatus_Destroyed at I:/EMULADORES/Playstation 4/shadPS4-src/externals/imgui/imgui_draw.cpp:3023
+tex->Status == ImTextureStatus_OK || tex->Status == ImTextureStatus_WantCreate || tex->Status == ImTextureStatus_WantUpdates at I:/EMULADORES/Playstation 4/shadPS4-src/externals/imgui/imgui_draw.cpp:2874
+tex->TexID == ImTextureID_Invalid && tex->BackendUserData == NULL && "Backend set texture Status to Destroyed but did not clear TexID/BackendUserData!" at I:/EMULADORES/Playstation 4/shadPS4-src/externals/imgui/imgui_draw.cpp:2887
+tex->TexID == ImTextureID_Invalid && tex->BackendUserData == NULL && "Backend set texture's TexID/BackendUserData but did not update Status to OK." at I:/EMULADORES/Playstation 4/shadPS4-src/externals/imgui/imgui_draw.cpp:2805
+tex->TexID == ImTextureID_Invalid && tex->BackendUserData == nullptr at I:/EMULADORES/Playstation 4/shadPS4-src/src/imgui/big_picture/imgui_impl_sdlrenderer3.cpp:240
+tex->TexID == ImTextureID_Invalid && tex->BackendUserData == nullptr at I:/EMULADORES/Playstation 4/shadPS4-src/src/imgui/renderer/imgui_impl_vulkan.cpp:744
 Texel buffer aliases image subresources {:x} : {:x}
-TexRef._TexID == ImTextureID_Invalid at C:/Projetos/Pink-shadPS4/externals/imgui\imgui.h:3914
 text chunk: out of memory
 Text rendering may be inaccurate.
 TextRender[{}]: index={} code=U+{:04X} call_xy=({}, {}) step_xy=({}, {}) surf=[buffer={} widthByte={} pixelSizeByte={} width={} height={} scissor=({}, {})-({}, {})] surfaceImage.address={} update=[{},{} {}x{}] img=[bx={} by={} adv={} stride={} w={} h={}] coverage=[nz={} sum={} max={}]
-texture != nullptr at C:/Projetos/Pink-shadPS4/src/imgui/renderer/imgui_impl_vulkan.cpp:471
-Texture cache: LRU item of image addr={:#x} freed twice
-Texture cache: touch of a freed image addr={:#x} size={:#x} flags={:#x}
+texture
+texture != nullptr at I:/EMULADORES/Playstation 4/shadPS4-src/src/imgui/renderer/imgui_impl_vulkan.cpp:481
+Texture #%03d (%dx%d pixels)
+Texture Area: about %d px ~%dx%d px
 texture corrupted at %d %d %d
 Texture dimensions are limited to %dx%d
 Texture dimensions can't be 0
@@ -9563,22 +9681,28 @@ The copy_opaque flag is set, but the encoder does not support it.
 The direct3d12 renderer doesn't work with transparent windows
 The following device has no driver: '%s'
 The GPU API doesn't support transparent windows
+The hardware pixel format '%s' is not supported by the device type '%s'
+The name does not resolve for the supplied parameters
 The physical device chosen by the OpenXR runtime is not suitable
 The provided shader code is not valid DXBC!
 The provided shader code is not valid DXIL!
 The provided shader code is not valid SPIR-V!
 The surface is not indexed format
+The value for option '%s' is not a image size.
+The value set by option '%s' is not an image size.
 theSampler+theTextureU
 theSampler+theTextureV
 theSampler+theTextureY
 This error will not be logged again for this renderer.
+This program is protected by copyright law and international treaties.
 This should have failed in PrepareDevice first!
 This surface does not support presenting!
 This ZeroCopyOutputStream doesn't support aliasing. Reaching here usually means a ZeroCopyOutputStream implementation bug.
-Thread ID buffer addressing outside of compute (shader {:#x}, stage {})
 TIFF image
+TILE_SURFACE_ENABLE
 Timestamps are unset in a packet for stream %d. This is deprecated and will stop working in the future. Fix your code to set the timestamps properly
 TLS image size      = {}
+To call IM_DEBUG_BREAK() %s:
 token not present
 token present
 toml::parse_dec_integer: invalid suffix: should be `_ non-digit-graph (graph | _graph)`
@@ -9586,10 +9710,7 @@ toml::parse_floating: invalid suffix: should be `_ non-digit-graph (graph | _gra
 too many enumerator strings, some devices may not be accessible
 Too many patches: %d
 Too much image data
-TouchImage
-TraceStageImages
 Tracking memory region {:#x} - {:#x} which is not fully GPU mapped.
-Transfer
 transfer %p
 transfer %p completed, length %lu
 transfer %p has callback %p
@@ -9605,7 +9726,6 @@ Try -max_interleave_delta 0 as a possible workaround.
 Trying to register an already registered image
 Trying to unregister an already unregistered image
 TryPatch
-tsharp_cache
 tUwfiXbOkoc
 type.2d.image
 type.sampled.image
@@ -9746,6 +9866,7 @@ Unknown surface type: %lu
 Unknown texture address mode: %d
 Unknown texture scale mode: %d
 Unknown touch device id %d, cannot reset
+UnmapMemory
 UnmapMemoryImpl
 UnregisterDeviceNotification
 UnregisterImage
@@ -9755,6 +9876,7 @@ unsupported API call for '%s' (unrecognized device driver)
 Unsupported GPU backend
 Unsupported image format
 Unsupported ImageRead with Lod
+Unsupported register for SRT walker patch
 Unsupported texture access for SDL_PIXELFORMAT_EXTERNAL_OES
 Unsupported texture format
 unsupported transfer type %d (unrecognized device driver)
@@ -9805,12 +9927,15 @@ V_DIV_FIXUP_F32
 V_DIV_FIXUP_F64
 v-2GPUYYfuU
 Valid palette required for paletted images
-validation {}
+validation
 validation failed
-validation layer
 Validation layers enabled, expect debug level performance!
 Validation layers not found, continuing without validation
 Validation layers partially enabled, some warnings may not be available
+validation_core
+validation_gpu
+validation_sync
+ValidationError
 Value __cdecl Shader::IR::IREmitter::BufferAtomicIAdd(const Value &, const Value &, const Value &, BufferInstInfo)
 Value __cdecl Shader::IR::IREmitter::BufferAtomicIMax(const Value &, const Value &, const Value &, bool, BufferInstInfo)
 Value __cdecl Shader::IR::IREmitter::BufferAtomicIMin(const Value &, const Value &, const Value &, bool, BufferInstInfo)
@@ -9818,13 +9943,15 @@ Value __cdecl Shader::IR::IREmitter::CompositeConstruct(const Value &, const Val
 Value __cdecl Shader::IR::IREmitter::CompositeConstruct(const Value &, const Value &, const Value &)
 Value __cdecl Shader::IR::IREmitter::CompositeConstruct(const Value &, const Value &, const Value &, const Value &)
 Value __cdecl Shader::IR::IREmitter::CompositeExtract(const Value &, size_t)
+Value __cdecl Shader::IR::IREmitter::CompositeInsert(const Value &, const Value &, size_t)
+Value __cdecl Shader::IR::IREmitter::CompositeShuffle(const Value &, const Value &, size_t, size_t)
+Value __cdecl Shader::IR::IREmitter::CompositeShuffle(const Value &, const Value &, size_t, size_t, size_t)
 Value __cdecl Shader::IR::IREmitter::CompositeShuffle(const Value &, const Value &, size_t, size_t, size_t, size_t)
 Value __cdecl Shader::IR::IREmitter::IAddCarry(const U32 &, const U32 &)
 vAmDeK~?????
 vaz1FGfx6hA
 vc1image
 VectorMemory
-VerifyAheadCopy
 VerifyFixClassname
 VertexShaderConstants
 Very large image (corrupt?)
@@ -9838,15 +9965,17 @@ vfixupnanps
 vgfXkm?j
 Video debug info
 Video device does not implement Vulkan_CreateSurface
+Video memory exhausted, collecting cached images
+Video memory exhausted, placing new buffer memory in system RAM
 Video uses a non-standard and wasteful way to store B-frames ('packed B-frames'). Consider using the mpeg4_unpack_bframes bitstream filter without encoding but stream copy to fix it.
 video_get_buffer: image parameters invalid
+VideoCore::TextureCache::RefreshImage
 View ID %d not present in VPS
-viewport->RendererUserData == NULL && viewport->PlatformUserData == NULL && viewport->PlatformHandle == NULL at C:/Projetos/Pink-shadPS4/externals/imgui/imgui.cpp:17933
-viewport->RendererUserData == NULL && viewport->PlatformUserData == NULL at C:/Projetos/Pink-shadPS4/externals/imgui/imgui.cpp:17924
+viewport->RendererUserData == NULL && viewport->PlatformUserData == NULL && viewport->PlatformHandle == NULL at I:/EMULADORES/Playstation 4/shadPS4-src/externals/imgui/imgui.cpp:17933
+viewport->RendererUserData == NULL && viewport->PlatformUserData == NULL at I:/EMULADORES/Playstation 4/shadPS4-src/externals/imgui/imgui.cpp:17924
 Virtual memory space initialized with regions:
 VirtualQuery on free memory region
 Vizrt Binary Image
-vk::LogicOp::eCopy
 VK_AMD_gcn_shader
 VK_AMD_mixed_attachment_samples
 VK_AMD_shader_explicit_vertex_parameter
@@ -9867,6 +9996,7 @@ VK_EXT_attachment_feedback_loop_dynamic_state
 VK_EXT_attachment_feedback_loop_layout
 VK_EXT_debug_utils
 VK_EXT_device_fault
+VK_EXT_device_fault unavailable, no fault details
 VK_EXT_headless_surface
 VK_EXT_headless_surface extension is not enabled in the Vulkan instance.
 VK_EXT_image_2d_view_of_3d
@@ -9878,6 +10008,7 @@ VK_EXT_shader_stencil_export
 VK_EXT_swapchain_colorspace
 VK_EXT_texture_compression_astc_hdr
 VK_KHR_bind_memory2
+VK_KHR_display extension is not enabled in the Vulkan instance.
 VK_KHR_fragment_shader_barycentric
 VK_KHR_get_memory_requirements2
 VK_KHR_get_physical_device_properties2
@@ -9888,8 +10019,6 @@ VK_KHR_win32_surface
 VK_KHR_win32_surface extension is not enabled in the Vulkan instance.
 VK_KHR_workgroup_memory_explicit_layout
 VK_LAYER_KHRONOS_validation
-VK_NV_device_diagnostic_checkpoints
-VK_NV_device_diagnostics_config
 VK_NV_framebuffer_mixed_samples
 VK_PIPELINE_COMPILE_REQUIRED_EXT
 vkAcquireNextImage2KHR
@@ -10024,6 +10153,7 @@ vkCreateDebugUtilsMessengerEXT
 vkCreateDevice
 vkCreateDevice()
 vkCreateDisplayPlaneSurfaceKHR
+vkCreateDisplayPlaneSurfaceKHR failed: %s
 vkCreateExecutionGraphPipelinesAMDX
 vkCreateFramebuffer
 vkCreateFramebuffer()
@@ -10057,7 +10187,6 @@ vkCreateWin32SurfaceKHR failed: %s
 vkDebugMarkerSetObjectNameEXT
 vkDebugMarkerSetObjectTagEXT
 vkDebugReportMessageEXT
-VkDebugUtilsLabelEXT
 vkDestroyDataGraphPipelineSessionARM
 vkDestroyDebugReportCallbackEXT
 vkDestroyDebugUtilsMessengerEXT
@@ -10106,6 +10235,8 @@ vkGetDeviceAccelerationStructureCompatibilityKHR
 vkGetDeviceBufferMemoryRequirements
 vkGetDeviceBufferMemoryRequirementsKHR
 vkGetDeviceFaultInfoEXT
+vkGetDeviceFaultInfoEXT (counts) failed
+vkGetDeviceFaultInfoEXT failed
 vkGetDeviceGroupPeerMemoryFeatures
 vkGetDeviceGroupPeerMemoryFeaturesKHR
 vkGetDeviceGroupPresentCapabilitiesKHR
@@ -10332,7 +10463,6 @@ vkGetSwapchainStatusKHR
 vkGetTensorMemoryRequirementsARM
 vkGetValidationCacheDataEXT
 vkGetVideoSessionMemoryRequirementsKHR
-VkImageMemoryBarrier2
 vkInvalidateMappedMemoryRanges
 vkMapMemory
 vkMapMemory()
@@ -10349,8 +10479,6 @@ vkRegisterDeviceEventEXT
 vkReleaseCapturedPipelineDataKHR
 vkReleaseSwapchainImagesEXT
 vkReleaseSwapchainImagesKHR
-VkRenderingAttachmentInfo
-VkRenderingInfo
 vkSetDebugUtilsObjectNameEXT
 vkSetDebugUtilsObjectTagEXT
 vkSetDeviceMemoryPriorityEXT
@@ -10374,11 +10502,13 @@ vm_send_DebuggerPages
 vm_send_GetCachedUnwindInfo
 vm_send_PatchCallsite
 vm_send_SetWriteBarrier
+vulkan
 Vulkan {}.{} is required, but only {}.{} is supported by device!
 Vulkan {}.{} is required, but only {}.{} is supported by instance!
 Vulkan already loaded
 Vulkan Conformance: %s
 Vulkan crashDiagnostics: {}
+Vulkan device lost
 Vulkan Device: %s
 Vulkan Driver: %s
 Vulkan Driver: %s %s
@@ -10391,7 +10521,6 @@ Vulkan loader library already loaded
 Vulkan PipelineCacheArchived: {}
 Vulkan PipelineCacheEnabled: {}
 Vulkan rdocEnable: {}
-Vulkan validation error {}: {}
 Vulkan vkValidation: {}
 Vulkan vkValidationCore: {}
 Vulkan vkValidationGpu: {}
@@ -10400,26 +10529,42 @@ Vulkan: Could not create Vulkan instance
 Vulkan: Failed to determine a suitable physical device
 Vulkan: Failed to load OpenXR: %s
 Vulkan: SDL_Vulkan_LoadLibrary failed!
+Vulkan::Presenter::Present
+Vulkan::Rasterizer::DispatchDirect
+Vulkan::Rasterizer::DispatchIndirect
+Vulkan::Rasterizer::Draw
+Vulkan::Rasterizer::DrawIndirect
 VULKAN_AllocateImage()
 VULKAN_CreateFramebuffersAndRenderPasses()
 VULKAN_CreateGraphicsPipeline
 VULKAN_CreateTexture
 VULKAN_INTERNAL_AddOptInVulkanOptions: Additional options property was set, but value was null. This may be a bug.
 vulkan-1.dll
+vulkandisplay: Choosing plane %u, minimum extent %ux%u maximum extent %ux%u
+vulkandisplay: Chose alpha mode 0x%x
+vulkandisplay: Created surface
+vulkandisplay: Display: %s Native resolution: %ux%u
+vulkandisplay: Matching mode %ux%u with refresh rate %u
+vulkandisplay: Number of display modes: %u
+vulkandisplay: Number of display planes: %u
+vulkandisplay: Number of display properties for device %u: %u
+vulkandisplay: Number of supported displays for plane %u: %u
 w32FiX4-pNg
 W5RgPUuv35Y
 --wait-for-debugger
-Waiting for debugger to attach...
+Warning: If you don't have a debugger attached, this will probably crash.
+Warning: owning Window is inactive. This DrawList is not being rendered!
 WASAPI can't determine minimum device period
 WASAPI can't get render client service
-WatchGpuWrite
 WBMP (Wireless Application Protocol Bitmap) image
 wEaMDj?a
 WebCoreHas3DRendering
 wfiXmg
 WGL_ARB_framebuffer_sRGB
 WGL_EXT_framebuffer_sRGB
-width <= 64 at C:/Projetos/Pink-shadPS4/src\core/devtools/widget/imgui_memory_editor.h:763
+width <= 64 at I:/EMULADORES/Playstation 4/shadPS4-src/src\core/devtools/widget/imgui_memory_editor.h:763
+WidthFixed 
+Will call the IM_DEBUG_BREAK() macro to break in debugger.
 Window framebuffer support not available
 Window has no Vulkan surface
 Window not claimed by this device
@@ -10833,50 +10978,13 @@ WKWebsiteDataStoreStatisticsClearInMemoryAndPersistentStore
 WKWebsiteDataStoreStatisticsClearInMemoryAndPersistentStoreModifiedSinceHours
 WKWebsitePoliciesCopyCustomHeaderFields
 wmv3image
-Workaround bpe_heap_guard: {} readbacks kept heap metadata so far ({:#x} bytes), last at {:#x}
-Workaround bpe_heap_guard: kept CPU heap metadata under a readback at {:#x} ({:#x} differing bytes)
-Workaround compute_loop_cap enabled: {} back edges
-Workaround compute_loop_cap hit: cs {:#x} stopped after {} back edges
-Workaround compute_loop_cap: {} capped invocations in the last minute (total {}, last cs {:#x})
-Workaround cp_record_thread enabled: Vulkan commands are recorded on their own thread
-Workaround cpu_affinity_mask: process affinity {:#x}
-Workaround dma_sync_once_per_batch enabled{}
-Workaround dynamic_tsharp_array_size: {} T# arrays bound in the last minute, {} null elements
-Workaround dynamic_tsharp_array_size: shader {:#x} binds {} T#s, {} null
-Workaround dynamic_tsharp_array_size: shader {:#x} has no room for another array of {} T#s
-Workaround dynamic_tsharp_array_size: shader {:#x} indexes {} T#s at flat[{}:{}] + {:#x}, stride {} bytes
-Workaround early_fragment_tests_from_z_order: fs {:#x} runs depth/stencil tests before its storage writes (affected shaders: {})
-Workaround eop_label_delay_us enabled: gfx EOP labels {} us after the packet (crude timing patch)
-Workaround image_memory_pool enabled
-Workaround incremental_bind enabled{}
-Workaround lds_barrier_uniform_readlane: shader {:#x} keeps LDS barriers inside a wave-uniform branch (affected shaders: {})
-Workaround lds_barriers_large_groups: shader {:#x} ({} threads) gets LDS barriers after divergent branches (affected shaders: {})
-Workaround lod_stats_from_bindings: {} IT_GET_LOD_STATS in the last minute, {} bound counter banks reported
-Workaround lod_stats_from_bindings: IT_GET_LOD_STATS at {:#x} ({} bytes) answered with {} bound counter banks
-Workaround lod_stats_from_bindings: IT_GET_LOD_STATS with invalid buffer {:#x}+{:#x}, ignored
-Workaround mapped_page_table enabled{}
-Workaround periodic_flush_commands enabled: submit every {} commands
-Workaround preserve_split_protection: {} splits restored {} protection ranges in the last minute
-Workaround preserve_split_protection: re-applied tracker protection {} on {:#x} after a handled {} fault left it at OS {:#x} (#{})
-Workaround preserve_split_protection: restored {} protection ranges after splitting {:#x}+{:#x}
-Workaround readback_ahead enabled
-Workaround readback_ahead_transfer_queue enabled: readback-ahead copies use queue family {}
-Workaround redirect_app0_logs: /app0/logs -> {}
-Workaround srt_walker_clean_reads: {} walker read faults served without a readback in the last minute (total {}, last at {:#x})
-Workaround srt_walker_clean_reads: SRT walker read at {:#x} served from guest memory without a readback
-Workaround tsharp_cache enabled{}
-Workaround wait_marker {} enabled: host marker buffer in {} memory
-Workaround wait_spin_us enabled: poll up to {} us before waits
-Workaround wave64_missing_lane_identity: shader {:#x} ReadLane of lane {} replaced with the reduction identity {:#x}
-Workaround wave64_missing_lane_identity: shader {:#x} reads lane {} of a {}-thread workgroup outside a known reduction, left as is
-Workaround wave64_uniform_branches: shader {:#x} lowers wave64 ops in {} more workgroup-uniform blocks (affected shaders: {})
 WorkgroupMemoryBarrier
+wrap_sys_device 0x%llx
+wrap_sys_device 0x%llx returns %d
 Write memory failed: %u
-Write watch {:#x}: {} (stage {:#x}) marks {:#x}+{:#x} GPU-modified
 WRONGTEXTUREFORMAT
 WTFIsDebuggerAttached
 wzu8fkKsGPU
-XAmDowAQ
 XAmDowAQhFs
 XBM (X BitMap) image
 X-face image
@@ -10888,24 +10996,31 @@ x-psn-debug-settings
 XR_APILAYER_LUNARG_core_validation
 XR_KHR_vulkan_enable2
 xrCreateSwapchain
+xrCreateVulkanDeviceKHR
+xrCreateVulkanInstanceKHR
 xrDestroySwapchain
 xrEnumerateSwapchainFormats
 xrEnumerateSwapchainImages
 xrGetVulkanGraphicsDevice2KHR
 xrGetVulkanGraphicsDevice2KHR failed, result: %d
+xrGetVulkanGraphicsRequirements2KHR
 XWD (X Window Dump) image
 YGConfigCopy
 YGNodeCanUseCachedMeasurement
 YGNodeCopyStyle
 YGSetMemoryFuncs
 You can add custom images to the trophies.
+You can also call ImGui::DebugTextEncoding() from your code with a given string to test that your UTF-8 encoding settings are correct.
+You can also call ImGui::ShowDebugLogWindow() from your code.
 You can't present on a render target
+You need a debugger attached or this will crash!
 You probably don't have a working Vulkan driver installed. %s %s %s(%d)
 YRaXiCamdsU
 yShGfXcTFOKg
 YUV textures require a Vulkan device that supports VK_KHR_sampler_ycbcr_conversion
 YV12, IYUV, NV12, NV21 textures only support full surface locks
 Z_INFO.TILE_SURFACE_ENABLE
+Z6?;Z6?%r6?5r6?Er6?%r6?5r6?ParseFetchShader
 zbliTwZKRyU
 ZeaMd3cYs48
 zero bytes returned in ctrl transfer?
